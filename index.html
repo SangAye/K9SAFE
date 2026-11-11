@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1419">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Constantes K9">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
+<title>Constantes K9</title>
+<style>
+:root{
+  --bg:#0f1419;--card:#1a2129;--card2:#222b35;--txt:#e8edf2;--mut:#8b98a5;--line:#2c3743;
+  --ok:#2ecc71;--watch:#f1c40f;--warn:#e67e22;--danger:#e74c3c;--acc:#3d9be9;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:16px}
+body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+header{position:sticky;top:0;z-index:10;background:var(--bg);padding:calc(10px + env(safe-area-inset-top)) 14px 8px;border-bottom:1px solid var(--line)}
+header h1{margin:0;font-size:19px;display:flex;align-items:center;gap:8px}
+header .sub{color:var(--mut);font-size:13px;margin-top:2px}
+#dogName{background:none;border:none;color:var(--txt);font:inherit;font-weight:700;width:9em;padding:0}
+main{padding:12px}
+.seg{display:flex;background:var(--card);border-radius:12px;padding:4px;margin-bottom:12px}
+.seg button{flex:1;border:0;background:none;color:var(--mut);padding:10px 4px;border-radius:9px;font-size:14px;font-weight:600}
+.seg button.on{background:var(--acc);color:#fff}
+.banner{border-radius:14px;padding:14px;margin-bottom:12px;background:var(--card);border-left:6px solid var(--mut)}
+.banner h2{margin:0 0 4px;font-size:17px}
+.banner p{margin:0;font-size:14px;color:var(--txt)}
+.banner ul{margin:8px 0 0;padding-left:18px;font-size:14px}
+.banner li{margin:3px 0}
+.lv0{border-color:var(--ok)}.lv1{border-color:var(--watch)}.lv2{border-color:var(--warn)}.lv3{border-color:var(--danger);background:#3a1d1d}
+.row{background:var(--card);border-radius:14px;padding:12px;margin-bottom:10px;border-left:5px solid transparent}
+.row.lv0{border-left-color:var(--ok)}.row.lv1{border-left-color:var(--watch)}.row.lv2{border-left-color:var(--warn)}.row.lv3{border-left-color:var(--danger)}
+.rtop{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.rlabel{font-weight:600;font-size:15px}
+.rlabel small{display:block;color:var(--mut);font-weight:400;font-size:12px;margin-top:2px}
+.help{border:1px solid var(--line);background:none;color:var(--mut);border-radius:50%;width:28px;height:28px;font-weight:700;flex:none}
+.inp{display:flex;align-items:center;gap:8px;margin-top:10px}
+.inp input,.inp select{flex:1;min-width:0;background:var(--card2);border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:12px;font-size:18px;appearance:none;-webkit-appearance:none}
+.inp select{font-size:16px}
+.unit{color:var(--mut);font-size:14px;min-width:42px}
+.verdict{margin-top:8px;font-size:14px;display:none}
+.verdict.show{display:block}
+.verdict b{display:inline-block;padding:2px 8px;border-radius:6px;font-size:12px;margin-right:6px;color:#111}
+.b0{background:var(--ok)}.b1{background:var(--watch)}.b2{background:var(--warn)}.b3{background:var(--danger);color:#fff!important}
+.ref{color:var(--mut);font-size:12px;margin-top:4px}
+.howto{display:none;margin-top:10px;font-size:13px;color:#c9d3dc;background:var(--card2);border-radius:10px;padding:10px;line-height:1.45}
+.howto.show{display:block}
+textarea{width:100%;background:var(--card2);border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:10px;font:inherit;min-height:60px}
+.btns{display:flex;gap:8px;margin:14px 0}
+.btn{flex:1;border:0;border-radius:12px;padding:14px;font-size:15px;font-weight:700;background:var(--card2);color:var(--txt)}
+.btn.pri{background:var(--acc);color:#fff}
+.btn.red{background:#5a2323;color:#ffb3b3}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:#141b22;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);z-index:20}
+nav button{flex:1;border:0;background:none;color:var(--mut);padding:10px 0 12px;font-size:12px;font-weight:600}
+nav button span{display:block;font-size:20px;margin-bottom:2px}
+nav button.on{color:var(--acc)}
+.page{display:none}.page.on{display:block}
+.hist{background:var(--card);border-radius:14px;padding:12px;margin-bottom:10px;border-left:5px solid var(--mut)}
+.hist .h1{display:flex;justify-content:space-between;font-weight:600}
+.hist .h2{color:var(--mut);font-size:13px;margin-top:4px;line-height:1.5}
+.hist .h3{display:none;margin-top:8px;font-size:13px;line-height:1.55}
+.hist.open .h3{display:block}
+.empty{color:var(--mut);text-align:center;padding:40px 10px}
+.guide h3{margin:18px 0 6px;font-size:16px}
+.guide p,.guide li{font-size:14px;line-height:1.5;color:#c9d3dc}
+.guide table{width:100%;border-collapse:collapse;font-size:13px}
+.guide td,.guide th{border-bottom:1px solid var(--line);padding:7px 4px;text-align:left;vertical-align:top}
+.guide th{color:var(--mut);font-weight:600}
+.disc{font-size:12px;color:var(--mut);margin-top:16px;line-height:1.45}
+.march{background:#2a1f12;border-left:5px solid var(--warn);border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.5;margin-bottom:10px}
+.march small{display:block;color:var(--mut);margin-top:4px;font-size:12px}
+.sec details{background:var(--card);border-radius:12px;margin-bottom:6px}
+.sec summary{padding:12px;font-weight:600;font-size:15px;list-style:none;display:flex;justify-content:space-between}
+.sec summary::-webkit-details-marker{display:none}
+.sec summary::after{content:"+";color:var(--mut);font-size:18px}
+.sec details[open] summary::after{content:"–"}
+.sec details[open]{border-left:4px solid var(--danger)}
+.sec ul{margin:0;padding:0 14px 12px 30px;font-size:14px;line-height:1.45;color:#d5dde4}
+.sec li{margin:3px 0}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:#2b3a48;color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:30}
+.toast.show{opacity:1}
+</style>
+</head>
+<body>
+<header>
+  <h1>🐕 <input id="dogName" aria-label="Nom du chien"></h1>
+  <div class="sub" id="nowTxt"></div>
+</header>
+
+<main>
+<!-- ============ SAISIE ============ -->
+<section class="page on" id="p-saisie">
+  <div class="seg" id="ctxSeg">
+    <button data-ctx="repos" class="on">Au repos</button>
+    <button data-ctx="effort">Juste après effort</button>
+  </div>
+  <div class="banner" id="banner"><h2>Bilan</h2><p>Remplis les lignes : le verdict s'affiche tout seul.</p></div>
+  <div id="rows"></div>
+  <div class="row"><div class="rlabel">Observations</div>
+    <textarea id="note" placeholder="Contexte : météo, type d'exercice, durée, comportement…"></textarea></div>
+  <div class="btns">
+    <button class="btn" id="btnReset">Effacer</button>
+    <button class="btn" id="btnShare">Partager</button>
+    <button class="btn pri" id="btnSave">Enregistrer</button>
+  </div>
+  <p class="disc">Aide au suivi uniquement : ne remplace pas l'avis d'un vétérinaire. En cas de doute, appelle ton vétérinaire. Les seuils sont ceux d'un chien adulte de grand gabarit (type Malinois).</p>
+</section>
+
+<!-- ============ HISTORIQUE ============ -->
+<section class="page" id="p-hist">
+  <div id="histList"></div>
+  <div class="btns"><button class="btn" id="btnExport">Exporter (CSV)</button><button class="btn red" id="btnClear">Tout supprimer</button></div>
+</section>
+
+<!-- ============ GUIDE ============ -->
+<section class="page guide" id="p-guide">
+  <h3>Valeurs normales (chien adulte, grand gabarit)</h3>
+  <table>
+    <tr><th>Constante</th><th>Repos</th><th>Danger</th></tr>
+    <tr><td>Température rectale</td><td>37,5 – 39,2 °C</td><td>≥ 41 °C ou &lt; 37 °C</td></tr>
+    <tr><td>Fréquence cardiaque</td><td>60 – 120 bpm</td><td>&gt; 200 au repos ou &lt; 40</td></tr>
+    <tr><td>Fréquence respiratoire</td><td>10 – 30 /min</td><td>Respiration difficile, bruyante</td></tr>
+    <tr><td>TRC (gencive)</td><td>1 – 2 s</td><td>&gt; 3 s</td></tr>
+    <tr><td>Pli de peau</td><td>retour immédiat</td><td>&gt; 3 s ou reste plissé</td></tr>
+    <tr><td>Muqueuses</td><td>roses, humides</td><td>blanches, bleues, grises</td></tr>
+  </table>
+
+  <h3>Après le travail</h3>
+  <p>Chez un chien de travail, température et cœur montent beaucoup pendant l'effort : jusqu'à ~40 °C et 180 bpm, c'est attendu. Ce qui compte, c'est la <b>récupération</b> : la température doit repasser sous 39,5 °C et le cœur sous 120 bpm en 10 à 30 minutes au calme et au frais. Refais une mesure 10–15 min après.</p>
+
+  <h3>Coup de chaleur : réflexes</h3>
+  <ul>
+    <li>Arrêter le travail, mettre à l'ombre / courant d'air.</li>
+    <li>Mouiller abondamment jusqu'à la peau avec de l'eau tempérée ou fraîche (pas glacée), ventilateur ou clim.</li>
+    <li>Laisser boire de petites quantités s'il est conscient.</li>
+    <li>Contrôler la température toutes les 5 min, <b>arrêter le refroidissement à 39,5 °C</b>.</li>
+    <li>Partir chez le vétérinaire même s'il a l'air d'aller mieux.</li>
+  </ul>
+
+  <h3>Torsion d'estomac (chiens à thorax profond)</h3>
+  <p>Ventre qui gonfle, efforts de vomir sans rien sortir, salivation, agitation : <b>urgence absolue</b>, direction vétérinaire tout de suite. Ne pas faire travailler le chien juste après un repas.</p>
+
+  <h3>Conseil</h3>
+  <p>Note les constantes de ton chien au repos plusieurs fois, quand il va bien : c'est sa référence personnelle, plus utile que les moyennes.</p>
+  <p class="disc">Sources : cours de pathologie des carnivores (examen général), Joint Trauma System – K9 Clinical Practice Guideline Heat Injury (2025), revues vétérinaires sur le coup de chaleur canin.</p>
+</section>
+
+<!-- ============ SECOURS K9 TECC ============ -->
+<section class="page sec" id="p-sec">
+  <div class="march"><b>Ordre :</b> Sécurité → Muselière* → <b>M</b> Hémorragie → <b>A</b> Voies aériennes → <b>R</b> Respiration → <b>C</b> Circulation/choc → <b>H</b> Hypothermie/tête → Évac véto
+  <small>*Pas de muselière si : détresse respiratoire, coup de chaleur, vomissements, trauma de la face, inconscient. Ne pas retarder l'extraction pour museler.</small></div>
+
+  <details><summary>🩸 Hémorragie massive</summary><ul>
+    <li>Compression directe forte, tout de suite.</li>
+    <li>Plaie profonde (cou, aine, aisselle, haut des membres) : <b>packing</b> gaze hémostatique + 3 min de pression.</li>
+    <li>Pansement compressif circulaire par-dessus.</li>
+    <li><b>Garrot = dernier recours</b> (amputation, saignement qui continue) : élastique type SWAT-T, 5–8 cm au-dessus, jamais sur une articulation. <b>Noter l'heure.</b></li></ul></details>
+
+  <details><summary>🫁 Plaie thorax soufflante (couteau, balle)</summary><ul>
+    <li>Main gantée sur le trou immédiatement.</li>
+    <li>Chest seal (ventilé si possible) ; un peu de vaseline aide à coller sur les poils.</li>
+    <li>Chercher un orifice de sortie.</li>
+    <li>Si ça s'aggrave (respire vite bouche ouverte, refuse de se coucher, agité, gencives bleues) : <b>décoller un bord du pansement</b> pour laisser sortir l'air. Exsufflation à l'aiguille seulement si formé.</li></ul></details>
+
+  <details><summary>🔪 Objet planté</summary><ul>
+    <li><b>Ne pas retirer</b> (sauf s'il bloque la respiration ou le transport).</li>
+    <li>Caler autour avec des compresses, scotcher pour qu'il ne bouge pas.</li>
+    <li>Transporter côté blessé vers le haut.</li></ul></details>
+
+  <details><summary>😮‍💨 Voies aériennes / chien inconscient</summary><ul>
+    <li>Retirer la muselière.</li>
+    <li>Couché sur le ventre (sphinx), tête et cou dans l'axe.</li>
+    <li>Ouvrir la gueule, tirer la langue vers l'avant.</li>
+    <li>Pas de doigt à l'aveugle. Gueule ouverte avec laisse ou bande passée derrière les crocs.</li></ul></details>
+
+  <details><summary>📉 Choc</summary><ul>
+    <li>Signes : gencives pâles, TRC &gt; 2 s, pouls fémoral faible, rapide, chien abattu, pattes froides.</li>
+    <li>Arrêter les saignements d'abord.</li>
+    <li>Allongé, au calme, couvert (couverture de survie). Rien à boire ni à manger.</li>
+    <li>Évacuation véto urgente.</li></ul></details>
+
+  <details><summary>❤️ Arrêt cardiaque (RCP)</summary><ul>
+    <li>Pas de respiration, pas de pouls : chien couché sur le côté.</li>
+    <li>Compressions sur la partie la plus large du thorax, 100–120/min, enfoncer de 1/3 à 1/2 du thorax.</li>
+    <li>Gueule fermée, souffler dans la truffe : <b>30 compressions / 2 insufflations</b>, changer de masseur toutes les 2 min.</li>
+    <li>Peu efficace sur trauma pénétrant ; chercher une cause réversible (pneumothorax).</li></ul></details>
+
+  <details><summary>🔥 Coup de chaleur</summary><ul>
+    <li>Stop travail, à l'ombre, <b>pas de muselière</b>.</li>
+    <li>Mouiller jusqu'à la peau à l'eau tempérée/fraîche (pas glacée) + ventiler.</li>
+    <li>Petites gorgées d'eau s'il est conscient.</li>
+    <li>Température toutes les 5 min, <b>stop refroidissement à 39,5 °C</b>. Véto même s'il va mieux.</li></ul></details>
+
+  <details><summary>🎈 Torsion d'estomac</summary><ul>
+    <li>Ventre qui gonfle, efforts de vomir sans résultat, bave, agitation.</li>
+    <li>Rien à boire ni à manger, ne pas faire marcher.</li>
+    <li><b>Véto immédiatement</b>, appeler en route.</li></ul></details>
+
+  <details><summary>🫃 Plaie de l'abdomen / organes sortis</summary><ul>
+    <li><b>Ne pas rentrer les organes.</b></li>
+    <li>Couvrir de compresses humides (sérum phy), puis film plastique ou pansement occlusif, sans serrer.</li>
+    <li>Empêcher le chien de lécher. Rien par la bouche.</li></ul></details>
+
+  <details><summary>🦴 Fracture</summary><ul>
+    <li>Museler, bouger le moins possible.</li>
+    <li>Ne pas remettre en place. Plaie ouverte : couvrir.</li>
+    <li>Attelle (SAM splint) en prenant l'articulation au-dessus et en dessous, ou immobiliser au brancard.</li>
+    <li>Vérifier que la patte reste chaude sous le bandage.</li></ul></details>
+
+  <details><summary>🧠 Trauma crânien</summary><ul>
+    <li>Tête légèrement surélevée (≈ 30°), cou dans l'axe, ne pas comprimer les jugulaires (collier).</li>
+    <li>Surveiller la conscience et les pupilles.</li>
+    <li>Prévenir le choc : arrêter les saignements, garder au chaud.</li></ul></details>
+
+  <details><summary>👁️ Œil / gaz lacrymogène</summary><ul>
+    <li>Rincer abondamment à l'eau ou au sérum phy.</li>
+    <li>Empêcher le frottement (collerette).</li>
+    <li>Objet planté dans l'œil : ne pas toucher, protéger.</li></ul></details>
+
+  <details><summary>☠️ Ingestion de stupéfiants / toxique</summary><ul>
+    <li>Ne pas faire vomir sans avis véto.</li>
+    <li>Récupérer le produit ou l'emballage.</li>
+    <li>Surveiller la respiration et la conscience. Véto en urgence (+ centre antipoison vétérinaire).</li></ul></details>
+
+  <details><summary>🔥 Brûlure</summary><ul>
+    <li>Éloigner de la source, retirer harnais et collier (pas ce qui a fondu sur la peau).</li>
+    <li>Petite surface : eau tempérée dans les 20 min. Grande surface : couvrir, ne pas refroidir (hypothermie).</li>
+    <li>Pas de glace.</li></ul></details>
+
+  <details><summary>🥶 Hypothermie</summary><ul>
+    <li>À l'abri, sécher en tamponnant, sur un isolant au sol, couvrir.</li>
+    <li>Manipuler doucement, transport à plat.</li></ul></details>
+
+  <details><summary>📞 Transmission au véto</summary><ul>
+    <li><b>Mécanisme</b> (couteau, balle, chaleur…).</li>
+    <li><b>Lésions</b>, <b>constantes</b>, <b>gestes faits</b>, <b>heure du garrot</b>.</li>
+    <li>Le maître-chien voyage avec le chien.</li></ul></details>
+
+  <p class="disc">Fiche réflexe tirée des recommandations K9 TECC / K9 TCCC. Ne remplace pas la formation ni l'avis vétérinaire. Gestes invasifs et médicaments : uniquement selon ta formation et ton cadre légal.</p>
+</section>
+</main>
+
+<nav>
+  <button data-p="saisie" class="on"><span>🩺</span>Saisie</button>
+  <button data-p="hist"><span>📋</span>Historique</button>
+  <button data-p="sec"><span>🚑</span>Secours</button>
+  <button data-p="guide"><span>📖</span>Guide</button>
+</nav>
+<div class="toast" id="toast"></div>
+
+<script>
+// ---------- stockage sûr ----------
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},
+             set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+
+const LV=["Normal","À surveiller","Anormal","DANGER"];
+let ctx="repos";
+
+// ---------- définition des constantes ----------
+// eval(v, ctx) -> [niveau 0-3, message]
+const P=[
+{id:"temp",label:"Température rectale",sub:"thermomètre numérique",unit:"°C",type:"num",step:"0.1",
+ ref:c=>c==="repos"?"Normal : 37,5 – 39,2 °C":"Après effort : jusqu'à 40 °C attendu, doit redescendre < 39,5 °C en 15–30 min",
+ how:"Thermomètre numérique lubrifié (vaseline), introduit de 2–3 cm dans l'anus, plaqué contre la paroi. Attendre le bip. Le thermomètre d'oreille est moins fiable.",
+ ev(v,c){ if(v<30||v>45)return[1,"Valeur incohérente, refais la mesure"];
+  if(v<35)return[3,"Hypothermie sévère : couvrir, réchauffer doucement, vétérinaire"];
+  if(v<37)return[2,"Hypothermie : réchauffer (couverture), surveiller, vétérinaire si ça persiste"];
+  if(v<37.5)return[1,"Un peu basse : recontrôle"];
+  if(c==="repos"){ if(v<=39.2)return[0,"Température normale"];
+   if(v<40)return[1,"Légère hyperthermie : repos au frais, recontrôle dans 15 min"];
+   if(v<41)return[2,"Hyperthermie : arrêter, refroidir (eau tempérée), vétérinaire si pas de baisse"];
+   return[3,"Coup de chaleur probable : refroidir immédiatement et urgence vétérinaire"];}
+  if(v<=40)return[0,"Normal après effort : vérifie qu'elle redescend"];
+  if(v<40.6)return[1,"Élevée : stop, ombre, eau, recontrôle dans 10 min"];
+  if(v<41)return[2,"Très élevée : refroidir maintenant, stop à 39,5 °C"];
+  return[3,"Coup de chaleur : refroidir immédiatement et urgence vétérinaire"];}},
+
+{id:"fc",label:"Fréquence cardiaque",sub:"compter 15 s × 4",unit:"bpm",type:"num",step:"1",
+ ref:c=>c==="repos"?"Normal : 60 – 120 bpm (chien sportif parfois 50–60)":"Après effort : jusqu'à ~180 bpm, doit redescendre < 120 en 10–15 min",
+ how:"Main à plat sur le thorax gauche, derrière le coude, ou pouls fémoral (intérieur de la cuisse, en haut). Compter 15 secondes et multiplier par 4. Chien calme, idéalement couché.",
+ ev(v,c){ if(v<15||v>350)return[1,"Valeur incohérente, refais la mesure"];
+  if(c==="repos"){ if(v<40)return[3,"Bradycardie importante : urgence vétérinaire"];
+   if(v<60)return[1,"Basse : possible chez un chien très sportif au calme, sinon à surveiller"];
+   if(v<=120)return[0,"Fréquence normale"];
+   if(v<=160)return[1,"Élevée au repos : stress, douleur, chaleur ? Recontrôle au calme"];
+   if(v<=200)return[2,"Tachycardie au repos : anormal, vétérinaire"];
+   return[3,"Tachycardie sévère au repos : urgence vétérinaire"];}
+  if(v<60)return[2,"Anormalement basse juste après un effort : vétérinaire"];
+  if(v<=180)return[0,"Normal après effort : vérifie la récupération"];
+  if(v<=220)return[1,"Très élevée : repos complet, recontrôle dans 10 min"];
+  return[2,"Excessive : arrêt, refroidir, recontrôle ; vétérinaire si pas de baisse"];}},
+
+{id:"pouls",label:"Qualité du pouls",sub:"pouls fémoral",type:"sel",
+ opts:[["","—"],["fort","Bien frappé, régulier",0,"Pouls normal"],["irreg","Irrégulier",2,"Rythme irrégulier : vétérinaire"],["bond","Bondissant, très fort",2,"Pouls bondissant : fièvre, coup de chaleur ? Surveiller température"],["faible","Faible / filant / difficile à trouver",3,"Pouls faible : signe de choc, urgence vétérinaire"]],
+ ref:()=>"Normal : bien perçu, régulier",
+ how:"Deux doigts à l'intérieur de la cuisse, en haut, dans le pli de l'aine (artère fémorale). Comparer avec les battements du cœur : chaque battement doit donner un pouls."},
+
+{id:"fr",label:"Fréquence respiratoire",sub:"compter les mouvements du thorax",unit:"/min",type:"num",step:"1",
+ ref:c=>c==="repos"?"Normal : 10 – 30 /min au repos":"Après effort : halètement normal, doit se calmer en 10–15 min",
+ how:"Compter chaque soulèvement du thorax (1 inspiration + 1 expiration = 1) pendant 15 s, multiplier par 4. Au repos, si possible couché. Si le chien halète, indique-le dans la ligne suivante.",
+ ev(v,c){ if(v<2||v>400)return[1,"Valeur incohérente, refais la mesure"];
+  if(c==="repos"){ if(v<8)return[2,"Très lente : anormal, vétérinaire"];
+   if(v<10)return[1,"Lente : recontrôle"];
+   if(v<=30)return[0,"Respiration normale"];
+   if(v<=40)return[1,"Un peu rapide : chaleur, stress ? Recontrôle au calme"];
+   return[2,"Rapide au repos (hors halètement) : anormal, vétérinaire si ça persiste"];}
+  if(v<=40)return[0,"Normal après effort"];
+  return[0,"Halètement normal après effort : doit se calmer en 10–15 min"];}},
+
+{id:"resp",label:"Type de respiration",type:"sel",
+ opts:[["","—"],["calme","Calme, régulière",0,"Respiration normale"],["halete","Halètement",-1,""],["bruit","Bruyante / sifflante",2,"Respiration bruyante : voies respiratoires, vétérinaire"],["dur","Difficile (ventre qui pousse, cou tendu)",3,"Détresse respiratoire : urgence vétérinaire"]],
+ ref:()=>"Normal : calme ; halètement normal après effort ou à la chaleur",
+ how:"Observer le thorax et le ventre. Une respiration où le ventre pousse fort, le cou tendu, les coudes écartés ou la bouche ouverte au repos sans chaleur est un signe de détresse.",
+ special(v,c){ if(v==="halete")return c==="effort"?[0,"Halètement normal après effort"]:[1,"Halètement au repos : chaleur, stress, douleur ? Recontrôle au frais"];}},
+
+{id:"trc",label:"TRC (remplissage capillaire)",sub:"appuyer sur la gencive",unit:"s",type:"num",step:"0.5",
+ ref:()=>"Normal : 1 – 2 secondes",
+ how:"Soulever la babine, appuyer avec le doigt sur la gencive rose jusqu'à ce qu'elle blanchisse, relâcher et compter en combien de secondes la couleur rose revient.",
+ ev(v){ if(v<0||v>15)return[1,"Valeur incohérente"];
+  if(v<1)return[1,"Très rapide : si gencives rouges, penser coup de chaleur / début de choc"];
+  if(v<=2)return[0,"Circulation normale"];
+  if(v<=3)return[2,"Ralenti : mauvaise circulation ou déshydratation, vétérinaire"];
+  return[3,"Très ralenti : signe de choc, urgence vétérinaire"];}},
+
+{id:"muq",label:"Couleur des muqueuses",sub:"gencives / intérieur des lèvres",type:"sel",
+ opts:[["","—"],["rose","Rose",0,"Couleur normale"],["rpale","Rose pâle",1,"Un peu pâle : recontrôle, compare avec d'habitude"],["blanc","Pâle / blanche",3,"Muqueuses blanches : choc, hémorragie, anémie : urgence"],["rouge","Rouge vif / rouge brique",2,"Rouge brique : coup de chaleur, infection ? Contrôle la température"],["bleu","Bleue / violette",3,"Cyanose : manque d'oxygène, urgence vétérinaire"],["jaune","Jaune",2,"Jaunisse : vétérinaire rapidement"],["gris","Grise / boueuse",3,"Muqueuses grises : choc grave, urgence"]],
+ ref:()=>"Normal : rose (attention aux zones naturellement pigmentées noires)",
+ how:"Regarder la gencive au-dessus des crocs ou l'intérieur de la lèvre, à la lumière naturelle si possible. Si la gencive est noire, regarder l'intérieur de la paupière inférieure."},
+
+{id:"hum",label:"Humidité des gencives",sub:"toucher avec le doigt",type:"sel",
+ opts:[["","—"],["humide","Humides, brillantes",0,"Bien hydraté"],["colle","Collantes",1,"Déshydratation légère : faire boire, recontrôle"],["seche","Sèches",2,"Déshydratation : faire boire, vétérinaire si ça persiste ou s'il refuse de boire"]],
+ ref:()=>"Normal : humides et glissantes",
+ how:"Passer le doigt sur la gencive : elle doit être humide et glisser. Si le doigt colle, le chien commence à être déshydraté."},
+
+{id:"pli",label:"Pli de peau",sub:"pincer la peau entre les épaules",unit:"s",type:"num",step:"0.5",
+ ref:()=>"Normal : retour immédiat (< 1 s)",
+ how:"Pincer et soulever la peau au-dessus des épaules (garrot), relâcher et compter le temps pour qu'elle reprenne sa place. Moins fiable chez un chien âgé ou très maigre.",
+ ev(v){ if(v<0||v>30)return[1,"Valeur incohérente"];
+  if(v<=1)return[0,"Hydratation normale"];
+  if(v<=2)return[1,"Déshydratation légère (~5 %) : faire boire"];
+  if(v<=3)return[2,"Déshydratation modérée (~8 %) : vétérinaire"];
+  return[3,"Déshydratation sévère (≥ 10 %) : urgence vétérinaire"];}},
+
+{id:"cons",label:"État de conscience",type:"sel",
+ opts:[["","—"],["a","Alerte, réactif",0,"Comportement normal"],["abat","Abattu, moins réactif que d'habitude",1,"Fatigue ou début de problème : recontrôle"],["voix","Réagit seulement à la voix",2,"Conscience altérée : vétérinaire"],["dou","Réagit seulement à la douleur",3,"Conscience très altérée : urgence"],["inc","Aucune réaction",3,"Inconscient : urgence absolue"]],
+ ref:()=>"Normal : alerte, réagit normalement",
+ how:"Le chien te suit-il du regard, répond-il à son nom, aux ordres connus ? Un chien de travail qui arrête de travailler ou cherche à se coucher au frais doit alerter."},
+
+{id:"marche",label:"Démarche",type:"sel",
+ opts:[["","—"],["ok","Normale",0,"Démarche normale"],["boit","Boiterie",1,"Boiterie : repos, vérifier coussinets et membres"],["raide","Raide / crampes / douleurs musculaires",2,"Raideur après effort : repos, vétérinaire si urines foncées"],["titube","Titube / désorienté",3,"Troubles neurologiques : coup de chaleur ? Urgence"],["couche","Ne se lève pas",3,"Urgence vétérinaire"]],
+ ref:()=>"Normal : marche souple, sans boiterie",
+ how:"Faire marcher le chien quelques mètres en ligne droite et en tournant."},
+
+{id:"ventre",label:"Abdomen",sub:"palper le ventre",type:"sel",
+ opts:[["","—"],["souple","Souple, non douloureux",0,"Abdomen normal"],["sens","Sensible / douloureux",2,"Douleur abdominale : vétérinaire"],["gonfle","Gonflé, tendu ou efforts de vomir sans résultat",3,"Suspicion de torsion d'estomac : urgence absolue"]],
+ ref:()=>"Normal : souple, pas de gonflement",
+ how:"Palper doucement le ventre à deux mains. Un ventre qui gonfle comme un tambour, avec des efforts de vomir sans rien sortir, est une urgence vitale (torsion)."}
+];
+
+// ---------- rendu ----------
+const rowsEl=document.getElementById("rows");
+P.forEach(p=>{
+  const d=document.createElement("div");d.className="row";d.id="row-"+p.id;
+  let input;
+  if(p.type==="num") input=`<input id="in-${p.id}" type="number" inputmode="decimal" step="${p.step}" placeholder="—"><span class="unit">${p.unit}</span>`;
+  else input=`<select id="in-${p.id}">${p.opts.map(o=>`<option value="${o[0]}">${o[1]}</option>`).join("")}</select>`;
+  d.innerHTML=`<div class="rtop"><div class="rlabel">${p.label}${p.sub?`<small>${p.sub}</small>`:""}</div><button class="help" data-h="${p.id}">?</button></div>
+  <div class="inp">${input}</div>
+  <div class="verdict" id="v-${p.id}"></div>
+  <div class="ref" id="r-${p.id}"></div>
+  <div class="howto" id="h-${p.id}">${p.how}</div>`;
+  rowsEl.appendChild(d);
+});
+rowsEl.addEventListener("click",e=>{const h=e.target.dataset.h;if(h)document.getElementById("h-"+h).classList.toggle("show")});
+rowsEl.addEventListener("input",()=>{update();saveDraft()});
+
+function evalParam(p,raw){
+  if(raw===""||raw==null)return null;
+  if(p.type==="num"){const v=parseFloat(String(raw).replace(",","."));if(isNaN(v))return null;return p.ev(v,ctx);}
+  if(p.special){const s=p.special(raw,ctx);if(s)return s;}
+  const o=p.opts.find(o=>o[0]===raw);return o?[o[2],o[3]]:null;
+}
+function readVals(){const o={};P.forEach(p=>o[p.id]=document.getElementById("in-"+p.id).value);return o}
+
+function combos(v,res){
+  const out=[];const t=parseFloat((v.temp||"").replace(",","."));const trc=parseFloat((v.trc||"").replace(",","."));
+  if(t>=(ctx==="effort"?40.6:40)&&(v.muq==="rouge"||v.cons==="voix"||v.cons==="dou"||v.marche==="titube"))
+    out.push([3,"Signes de coup de chaleur : arrêter, mouiller jusqu'à la peau (eau tempérée), ventiler, stop à 39,5 °C, vétérinaire"]);
+  if((v.muq==="blanc"||v.muq==="rpale"||v.muq==="gris")&&(trc>2||v.pouls==="faible"))
+    out.push([3,"Signes de choc (muqueuses pâles + circulation ralentie) : garder au chaud, au calme, urgence vétérinaire"]);
+  if((v.hum==="colle"||v.hum==="seche")&&parseFloat(v.pli)>1)
+    out.push([2,"Déshydratation confirmée par 2 signes : faire boire, vétérinaire si pas d'amélioration"]);
+  return out;
+}
+
+function update(){
+  const v=readVals();let max=-1;const msgs=[];
+  P.forEach(p=>{
+    const r=evalParam(p,v[p.id]);const row=document.getElementById("row-"+p.id);const ve=document.getElementById("v-"+p.id);
+    document.getElementById("r-"+p.id).textContent=p.ref(ctx);
+    row.className="row";
+    if(!r){ve.className="verdict";return}
+    row.classList.add("lv"+r[0]);ve.className="verdict show";
+    ve.innerHTML=`<b class="b${r[0]}">${LV[r[0]]}</b>${r[1]}`;
+    if(r[0]>max)max=r[0];if(r[0]>0)msgs.push([r[0],p.label+" : "+r[1]]);
+  });
+  combos(v).forEach(c=>{if(c[0]>max)max=c[0];msgs.unshift(c)});
+  const b=document.getElementById("banner");
+  if(max<0){b.className="banner";b.innerHTML="<h2>Bilan</h2><p>Remplis les lignes : le verdict s'affiche tout seul.</p>";return{max,msgs}}
+  const head=["✅ Rien d'anormal","⚠️ À surveiller","🟠 Anormal","🚨 DANGER"][max];
+  const txt=["Les constantes saisies sont dans les normes.","Recontrôle dans 10–15 minutes au calme et au frais.","Contacte ton vétérinaire.","Urgence vétérinaire : appelle et pars maintenant."][max];
+  msgs.sort((a,b)=>b[0]-a[0]);
+  b.className="banner lv"+max;
+  b.innerHTML=`<h2>${head}</h2><p>${txt}</p>${msgs.length?"<ul>"+msgs.map(m=>`<li>${m[1]}</li>`).join("")+"</ul>":""}`;
+  return{max,msgs};
+}
+
+// ---------- contexte ----------
+document.getElementById("ctxSeg").addEventListener("click",e=>{
+  const c=e.target.dataset.ctx;if(!c)return;ctx=c;
+  document.querySelectorAll("#ctxSeg button").forEach(b=>b.classList.toggle("on",b.dataset.ctx===c));
+  update();saveDraft();
+});
+
+// ---------- brouillon ----------
+function saveDraft(){store.set("k9_draft",{ctx,v:readVals(),note:document.getElementById("note").value})}
+function loadDraft(){const d=store.get("k9_draft",null);if(!d)return;ctx=d.ctx||"repos";
+  document.querySelectorAll("#ctxSeg button").forEach(b=>b.classList.toggle("on",b.dataset.ctx===ctx));
+  P.forEach(p=>{if(d.v&&d.v[p.id]!=null)document.getElementById("in-"+p.id).value=d.v[p.id]});
+  document.getElementById("note").value=d.note||"";}
+document.getElementById("note").addEventListener("input",saveDraft);
+
+// ---------- nom du chien ----------
+const dn=document.getElementById("dogName");dn.value=store.get("k9_name","Tchoukel");
+dn.addEventListener("input",()=>store.set("k9_name",dn.value));
+
+// ---------- texte bilan ----------
+function fmtDate(ts){return new Date(ts).toLocaleString("fr-FR",{weekday:"short",day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"})}
+function valueText(p,raw){if(raw===""||raw==null)return null;if(p.type==="num")return raw+" "+p.unit;const o=p.opts.find(o=>o[0]===raw);return o?o[1]:raw}
+function summary(rec){
+  const L=[`Constantes ${rec.name} – ${fmtDate(rec.ts)}`,`Contexte : ${rec.ctx==="repos"?"au repos":"juste après effort"}`,`Bilan : ${LV[rec.max]||"—"}`,""];
+  P.forEach(p=>{const t=valueText(p,rec.v[p.id]);if(t)L.push(`• ${p.label} : ${t}`)});
+  if(rec.msgs.length){L.push("");rec.msgs.forEach(m=>L.push("! "+m[1]))}
+  if(rec.note)L.push("","Obs. : "+rec.note);
+  return L.join("\n");
+}
+function currentRec(){const u=update();return{ts:Date.now(),name:dn.value||"Chien",ctx,v:readVals(),note:document.getElementById("note").value.trim(),max:u.max,msgs:u.msgs}}
+
+// ---------- boutons ----------
+const toast=t=>{const e=document.getElementById("toast");e.textContent=t;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),1800)};
+document.getElementById("btnSave").onclick=()=>{
+  const r=currentRec();if(r.max<0){toast("Aucune valeur saisie");return}
+  const h=store.get("k9_hist",[]);h.unshift(r);store.set("k9_hist",h);renderHist();toast("Mesure enregistrée");
+};
+document.getElementById("btnReset").onclick=()=>{
+  P.forEach(p=>document.getElementById("in-"+p.id).value="");document.getElementById("note").value="";
+  update();saveDraft();window.scrollTo(0,0);
+};
+async function shareText(t){
+  if(navigator.share){try{await navigator.share({text:t});return}catch(e){if(e.name==="AbortError")return}}
+  try{await navigator.clipboard.writeText(t);toast("Bilan copié")}catch(e){prompt("Copie le bilan :",t)}
+}
+document.getElementById("btnShare").onclick=()=>{const r=currentRec();if(r.max<0){toast("Aucune valeur saisie");return}shareText(summary(r))};
+
+// ---------- historique ----------
+const COL=["var(--ok)","var(--watch)","var(--warn)","var(--danger)"];
+function renderHist(){
+  const h=store.get("k9_hist",[]);const el=document.getElementById("histList");
+  if(!h.length){el.innerHTML='<div class="empty">Aucune mesure enregistrée.<br>Enregistre une saisie pour la retrouver ici.</div>';return}
+  el.innerHTML=h.map((r,i)=>{
+    const short=["temp","fc","fr","trc"].map(id=>{const p=P.find(x=>x.id===id);const t=valueText(p,r.v[id]);return t?`${p.label.split(" ")[0]} ${t}`:null}).filter(Boolean).join(" · ");
+    const full=P.map(p=>{const t=valueText(p,r.v[p.id]);return t?`${p.label} : <b>${t}</b>`:null}).filter(Boolean).join("<br>");
+    return `<div class="hist" style="border-left-color:${COL[r.max]}" data-i="${i}">
+      <div class="h1"><span>${fmtDate(r.ts)}</span><span style="color:${COL[r.max]}">${LV[r.max]}</span></div>
+      <div class="h2">${r.ctx==="repos"?"Repos":"Après effort"}${short?" — "+short:""}</div>
+      <div class="h3">${full}${r.msgs.length?"<br><br>"+r.msgs.map(m=>"⚠️ "+m[1]).join("<br>"):""}${r.note?"<br><br>📝 "+r.note.replace(/</g,"&lt;"):""}
+        <div class="btns"><button class="btn" data-sh="${i}">Partager</button><button class="btn red" data-del="${i}">Supprimer</button></div></div>
+    </div>`}).join("");
+}
+document.getElementById("histList").addEventListener("click",e=>{
+  const h=store.get("k9_hist",[]);
+  if(e.target.dataset.del!=null){if(confirm("Supprimer cette mesure ?")){h.splice(+e.target.dataset.del,1);store.set("k9_hist",h);renderHist()}return}
+  if(e.target.dataset.sh!=null){shareText(summary(h[+e.target.dataset.sh]));return}
+  const c=e.target.closest(".hist");if(c)c.classList.toggle("open");
+});
+document.getElementById("btnClear").onclick=()=>{if(confirm("Supprimer tout l'historique ?")){store.set("k9_hist",[]);renderHist()}};
+document.getElementById("btnExport").onclick=()=>{
+  const h=store.get("k9_hist",[]);if(!h.length){toast("Historique vide");return}
+  const head=["Date","Contexte","Bilan",...P.map(p=>p.label),"Observations"];
+  const rows=h.map(r=>[fmtDate(r.ts),r.ctx,LV[r.max],...P.map(p=>valueText(p,r.v[p.id])||""),r.note||""]);
+  const csv="﻿"+[head,...rows].map(l=>l.map(x=>`"${String(x).replace(/"/g,'""')}"`).join(";")).join("\n");
+  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));a.download="constantes_"+(dn.value||"chien")+".csv";a.click();
+};
+
+// ---------- navigation ----------
+document.querySelector("nav").addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("on",x===b));
+  document.querySelectorAll(".page").forEach(x=>x.classList.toggle("on",x.id==="p-"+b.dataset.p));
+  window.scrollTo(0,0);
+});
+
+// ---------- init ----------
+const tick=()=>document.getElementById("nowTxt").textContent="Relevé des constantes · "+new Date().toLocaleString("fr-FR",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"});
+tick();setInterval(tick,30000);
+loadDraft();update();renderHist();
+if("serviceWorker" in navigator){try{navigator.serviceWorker.register("sw.js").catch(()=>{})}catch(e){}}
+</script>
+</body>
+</html>
