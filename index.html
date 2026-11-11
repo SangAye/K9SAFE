@@ -17,8 +17,9 @@
   --ok:#6fbf4a;--watch:#e2c044;--warn:#d9822b;--danger:#d64535;--acc:#c49a5a;--olive:#5f6f35;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='%23c49a5a' fill-opacity='0.05' transform='rotate(-20 60 60)'%3E%3Cellipse cx='60' cy='72' rx='16' ry='13'/%3E%3Cellipse cx='42' cy='52' rx='6' ry='8'/%3E%3Cellipse cx='54' cy='44' rx='6' ry='8'/%3E%3Cellipse cx='66' cy='44' rx='6' ry='8'/%3E%3Cellipse cx='78' cy='52' rx='6' ry='8'/%3E%3C/g%3E%3C/svg%3E");color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:16px}
-body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+html{background:var(--bg)}
+html,body{margin:0;color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:16px}
+body{background:transparent;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
 header{position:sticky;top:0;z-index:10;background:linear-gradient(135deg,#2c3a1f,#1d2617);padding:calc(10px + env(safe-area-inset-top)) 14px 10px;border-bottom:3px solid var(--acc);display:flex;align-items:center;gap:12px}
 header .logo{width:46px;height:46px;flex:none}
 header .tag{font-size:11px;font-weight:800;letter-spacing:2.5px;color:var(--acc);text-transform:uppercase}
@@ -58,9 +59,10 @@ textarea{width:100%;background:var(--card2);border:1px solid var(--line);color:v
 .btn.pri{background:var(--acc);color:#1b1f15}
 .btn.red{background:#4d2018;color:#f2b0a3}
 nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:#1d2617;border-top:2px solid var(--olive)!important;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);z-index:20}
-nav button{flex:1;border:0;background:none;color:var(--mut);padding:10px 0 12px;font-size:12px;font-weight:600}
+nav button{flex:1;border:0;background:none;color:var(--mut);padding:10px 0 12px;font-size:11px;font-weight:600}
 nav button span{display:block;font-size:20px;margin-bottom:2px}
 nav button.on{color:var(--acc)}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 900' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='%23c49a5a'%3E%3Cg transform='translate%2872 887%29 rotate%2838%29 scale%280.85%29' fill-opacity='0.035'%3E%3Cellipse cx='0' cy='10' rx='12' ry='10'/%3E%3Cellipse cx='-14' cy='-5' rx='4.5' ry='6'/%3E%3Cellipse cx='-5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='14' cy='-5' rx='4.5' ry='6'/%3E%3C/g%3E%3Cg transform='translate%2897 793%29 rotate%2825%29 scale%280.92%29' fill-opacity='0.050'%3E%3Cellipse cx='0' cy='10' rx='12' ry='10'/%3E%3Cellipse cx='-14' cy='-5' rx='4.5' ry='6'/%3E%3Cellipse cx='-5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='14' cy='-5' rx='4.5' ry='6'/%3E%3C/g%3E%3Cg transform='translate%28166 726%29 rotate%2833%29 scale%281.00%29' fill-opacity='0.064'%3E%3Cellipse cx='0' cy='10' rx='12' ry='10'/%3E%3Cellipse cx='-14' cy='-5' rx='4.5' ry='6'/%3E%3Cellipse cx='-5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='14' cy='-5' rx='4.5' ry='6'/%3E%3C/g%3E%3Cg transform='translate%28177 635%29 rotate%2815%29 scale%280.85%29' fill-opacity='0.075'%3E%3Cellipse cx='0' cy='10' rx='12' ry='10'/%3E%3Cellipse cx='-14' cy='-5' rx='4.5' ry='6'/%3E%3Cellipse cx='-5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='14' cy='-5' rx='4.5' ry='6'/%3E%3C/g%3E%3Cg transform='translate%28230 564%29 rotate%2821%29 scale%280.92%29' fill-opacity='0.083'%3E%3Cellipse cx='0' cy='10' rx='12' ry='10'/%3E%3Cellipse cx='-14' cy='-5' rx='4.5' ry='6'/%3E%3Cellipse cx='-5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='14' cy='-5' rx='4.5' ry='6'/%3E%3C/g%3E%3Cg transform='translate%28220 478%29 rotate%284%29 scale%281.00%29' fill-opacity='0.085'%3E%3Cellipse cx='0' cy='10' rx='12' ry='10'/%3E%3Cellipse cx='-14' cy='-5' rx='4.5' ry='6'/%3E%3Cellipse cx='-5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='14' cy='-5' rx='4.5' ry='6'/%3E%3C/g%3E%3Cg transform='translate%28259 402%29 rotate%2813%29 scale%280.85%29' fill-opacity='0.083'%3E%3Cellipse cx='0' cy='10' rx='12' ry='10'/%3E%3Cellipse cx='-14' cy='-5' rx='4.5' ry='6'/%3E%3Cellipse cx='-5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='14' cy='-5' rx='4.5' ry='6'/%3E%3C/g%3E%3Cg transform='translate%28241 318%29 rotate%282%29 scale%280.92%29' fill-opacity='0.075'%3E%3Cellipse cx='0' cy='10' rx='12' ry='10'/%3E%3Cellipse cx='-14' cy='-5' rx='4.5' ry='6'/%3E%3Cellipse cx='-5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='14' cy='-5' rx='4.5' ry='6'/%3E%3C/g%3E%3Cg transform='translate%28283 243%29 rotate%2818%29 scale%281.00%29' fill-opacity='0.064'%3E%3Cellipse cx='0' cy='10' rx='12' ry='10'/%3E%3Cellipse cx='-14' cy='-5' rx='4.5' ry='6'/%3E%3Cellipse cx='-5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='14' cy='-5' rx='4.5' ry='6'/%3E%3C/g%3E%3Cg transform='translate%28277 156%29 rotate%2812%29 scale%280.85%29' fill-opacity='0.050'%3E%3Cellipse cx='0' cy='10' rx='12' ry='10'/%3E%3Cellipse cx='-14' cy='-5' rx='4.5' ry='6'/%3E%3Cellipse cx='-5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='14' cy='-5' rx='4.5' ry='6'/%3E%3C/g%3E%3Cg transform='translate%28335 86%29 rotate%2830%29 scale%280.92%29' fill-opacity='0.035'%3E%3Cellipse cx='0' cy='10' rx='12' ry='10'/%3E%3Cellipse cx='-14' cy='-5' rx='4.5' ry='6'/%3E%3Cellipse cx='-5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='5' cy='-13' rx='4.5' ry='6'/%3E%3Cellipse cx='14' cy='-5' rx='4.5' ry='6'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") center/cover no-repeat,radial-gradient(ellipse at 15% 0%,rgba(95,111,53,.35),transparent 55%),radial-gradient(ellipse at 100% 100%,rgba(196,154,90,.12),transparent 50%),var(--bg)}
 .page{display:none}.page.on{display:block}
 .hist{background:var(--card);border-radius:14px;padding:12px;margin-bottom:10px;border-left:5px solid var(--mut)}
 .hist .h1{display:flex;justify-content:space-between;font-weight:600}
@@ -84,11 +86,71 @@ nav button.on{color:var(--acc)}
 .sec details[open]{border-left:4px solid var(--danger)}
 .sec ul{margin:0;padding:0 14px 12px 30px;font-size:14px;line-height:1.45;color:#d5dde4}
 .sec li{margin:3px 0}
+.sec a{color:var(--acc);font-weight:700}
+.aseg{display:flex;gap:4px;background:var(--card);border-radius:12px;padding:4px;margin-bottom:10px}
+.aseg button{flex:1;border:0;background:none;color:var(--mut);padding:9px 2px;border-radius:9px;font-size:12.5px;font-weight:700}
+.aseg button.on{background:var(--acc);color:#1b1f15}
+.apanel{display:none}.apanel.on{display:block}
+.a-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px 6px 10px}
+.anat{width:100%;height:auto;display:block;cursor:zoom-in}
+.a-intro{font-size:13px;color:var(--mut);margin:2px 6px 8px;line-height:1.4}
+.b-body{fill:url(#fawn);stroke:#3a2c18;stroke-width:1.1}
+.b-body.in{fill:#2f2a1f;stroke:#c49a5a;stroke-width:1.3}
+.b-far{fill:#8c6534;stroke:#3a2c18;stroke-width:.8}
+.b-far.in{fill:#25211a;stroke:#6d5c40;stroke-width:.8}
+.a-mask{fill:url(#maskg)}.a-mask.in{fill:#1c1712;opacity:.5}
+.a-ear{fill:#2a2018}.a-earin{fill:#5a4430}
+.a-eye{fill:#120e0a}.a-eyehl{fill:#fff;opacity:.7}
+.a-lip{fill:none;stroke:#120e0a;stroke-width:1.2;stroke-linecap:round}
+.bdg circle{fill:#f4efe2;stroke:#171c14;stroke-width:1.3}
+.bdg text{font-size:9.5px;font-weight:800;text-anchor:middle;dominant-baseline:central;fill:#171c14}
+.bdg.r circle{fill:#e8473a;stroke:#fff;stroke-width:1.3}.bdg.r text{fill:#fff}
+.bdg.hl circle{stroke:#ffd84a;stroke-width:3.5}
+.z-junc{fill:#ff3b2f;fill-opacity:.35;stroke:#ff6b5b;stroke-width:1;stroke-dasharray:2.5 2}
+.z-tq{stroke:#ffd84a;stroke-width:4.5;stroke-linecap:round}
+.t-rib{fill:none;stroke:#efe8d6;stroke-width:1;opacity:.55}
+.t-band4{fill:#ff3b2f;fill-opacity:.42}.t-band7{fill:#ffd84a;fill-opacity:.42}
+.t-arrow{fill:#ff3b2f;stroke:#171c14;stroke-width:1}
+.t-target{fill:none;stroke:#ff3b2f;stroke-width:2.2;stroke-dasharray:3 2}
+.t-x{stroke:#ff3b2f;stroke-width:3;stroke-linecap:round}
+.t-lead{stroke:#efe8d6;stroke-width:1}
+.t-lab{font-size:8px;fill:#efe8d6;opacity:.7;font-weight:700}
+.o-lung{fill:#e7a9b0;fill-opacity:.5;stroke:#e7a9b0;stroke-width:.8}
+.o-heart{fill:#d63a2e;stroke:#7a1610;stroke-width:1}
+.o-diaph{fill:none;stroke:#f2ead8;stroke-width:1.6;stroke-dasharray:3 2}
+.o-liver{fill:#7e3326;stroke:#4a1a12;stroke-width:.8}
+.o-stom{fill:#d8b46a;stroke:#8a703a;stroke-width:.8}
+.o-spleen{fill:#9b5fc0}
+.o-gut{fill:#f0b9a0;stroke:#b07a62;stroke-width:.8}.o-gutl{fill:none;stroke:#b07a62;stroke-width:.8}
+.o-kid{fill:#a5543f;stroke:#5a2018;stroke-width:.6}
+.o-blad{fill:#f2e56b;stroke:#9a8a30;stroke-width:.8}
+.o-brain{fill:#ecc7c7;stroke:#b08a8a;stroke-width:.6}
+.o-trach{fill:none;stroke:#bcd3e3;stroke-width:5;stroke-linecap:round}.o-trachr{fill:none;stroke:#8aa6ba;stroke-width:5;stroke-dasharray:1 2.2}
+.o-art{fill:none;stroke:#ff5040;stroke-width:2.2;stroke-linecap:round}
+.o-vein{fill:none;stroke:#5a7fd6;stroke-width:2.2;stroke-linecap:round}
+.a-list{margin-top:10px;display:flex;flex-direction:column;gap:2px}
+.a-row{display:flex;gap:10px;align-items:flex-start;padding:8px 6px;border-radius:10px}
+.a-row:active,.a-row.hl{background:var(--card2)}
+.a-row b{flex:none;width:24px;height:24px;border-radius:50%;background:#f4efe2;color:#171c14;font-size:12px;display:flex;align-items:center;justify-content:center}
+.a-row b.r{background:#e8473a;color:#fff}
+.a-row i{flex:none;width:22px;height:14px;border-radius:4px;margin-top:3px;border:1px solid rgba(0,0,0,.4)}
+.a-row .tx{font-size:15px;font-weight:700;line-height:1.25}
+.a-row .tx small{display:block;font-weight:400;font-size:13px;color:var(--mut);margin-top:1px}
+.a-sw{display:inline-block;width:14px;height:10px;border-radius:2px;vertical-align:middle;margin-right:4px}
+.anat-h{font-size:14px;text-transform:uppercase;letter-spacing:1.2px;color:var(--acc);margin:6px 0 8px;font-weight:800}
+.zoom{position:fixed;inset:0;z-index:50;background:#171c14;display:none;align-items:center;justify-content:center;padding:10px;overflow:auto}
+.zoom.on{display:flex}#zoomIn{width:100%;height:100%}.zoom svg{width:100%;height:100%;margin:0;border:0;background:none;cursor:zoom-out}
+.zoom-x{position:fixed;top:calc(10px + env(safe-area-inset-top));right:14px;font-size:28px;color:var(--txt);background:none;border:0;z-index:51}
 .toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--olive);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:30}
 .toast.show{opacity:1}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="fawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bf9154"/><stop offset=".6" stop-color="#ab7b40"/><stop offset="1" stop-color="#916632"/></linearGradient>
+<linearGradient id="maskg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#16110c"/><stop offset=".6" stop-color="#1e1710" stop-opacity=".85"/><stop offset="1" stop-color="#2a2018" stop-opacity="0"/></linearGradient>
+<filter id="sh" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-color="#000" flood-opacity=".55"/></filter>
+</defs></svg>
 <header>
   <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 3 L58 12 V32 C58 47 46 57 32 61 C18 57 6 47 6 32 V12 Z" fill="#3d4a26" stroke="#c49a5a" stroke-width="2.5"/><ellipse cx="32" cy="40" rx="11" ry="9" fill="#efe8d6"/><ellipse cx="19.5" cy="27" rx="4" ry="5.5" fill="#efe8d6"/><ellipse cx="27" cy="20.5" rx="4" ry="5.5" fill="#efe8d6"/><ellipse cx="37" cy="20.5" rx="4" ry="5.5" fill="#efe8d6"/><ellipse cx="44.5" cy="27" rx="4" ry="5.5" fill="#efe8d6"/><path d="M29.5 34h5v4h4v5h-4v4h-5v-4h-4v-5h4z" fill="#d64535"/></svg>
   <div><div class="tag">TECC K9 · Suivi santé</div>
@@ -121,27 +183,42 @@ nav button.on{color:var(--acc)}
   <div class="btns"><button class="btn" id="btnExport">Exporter (CSV)</button><button class="btn red" id="btnClear">Tout supprimer</button></div>
 </section>
 
+
+<!-- ============ ANATOMIE ============ -->
+<section class="page" id="p-anat">
+  <div class="aseg" id="aseg">
+    <button data-v="mes" class="on">Mesures</button><button data-v="hem">Hémorragie</button><button data-v="tho">Thorax · RCP</button><button data-v="org">Organes</button>
+  </div>
+  <div class="apanel on" id="av-mes"><div class="a-card"><svg viewBox="0 0 340 262" class="anat"><path d="M250.0,166.0 C252.0,168.0 258.7,174.0 262.0,178.0 C265.3,182.0 267.3,185.7 270.0,190.0 C272.7,194.3 276.0,199.7 278.0,204.0 C280.0,208.3 281.3,214.0 282.0,216.0 C281.7,218.3 280.3,225.3 280.0,230.0 C279.7,234.7 279.7,241.0 280.0,244.0 C280.3,247.0 281.7,247.3 282.0,248.0 C282.3,248.7 285.3,251.2 284.0,252.0 C282.7,252.8 277.3,252.8 274.0,253.0 C270.7,253.2 266.0,253.5 264.0,253.0 C262.0,252.5 262.3,250.5 262.0,250.0 C263.0,249.0 266.7,247.3 268.0,244.0 C269.3,240.7 269.7,234.3 270.0,230.0 C270.3,225.7 271.3,222.0 270.0,218.0 C268.7,214.0 265.0,210.0 262.0,206.0 C259.0,202.0 255.0,198.3 252.0,194.0 C249.0,189.7 245.3,182.3 244.0,180.0 Z" class="b-far"/><path d="M204.0,186.0 C205.3,188.3 210.7,194.0 212.0,200.0 C213.3,206.0 212.0,215.3 212.0,222.0 C212.0,228.7 211.7,236.0 212.0,240.0 C212.3,244.0 213.7,245.0 214.0,246.0 C214.3,247.0 217.3,250.8 216.0,252.0 C214.7,253.2 209.7,252.8 206.0,253.0 C202.3,253.2 196.3,253.5 194.0,253.0 C191.7,252.5 192.3,250.5 192.0,250.0 C192.7,249.0 195.3,248.0 196.0,244.0 C196.7,240.0 196.3,232.3 196.0,226.0 C195.7,219.7 194.7,212.0 194.0,206.0 C193.3,200.0 192.3,192.7 192.0,190.0 Z" class="b-far"/><path d="M40.4,89.8 C41.7,88.8 43.3,85.7 47.8,83.7 C52.2,81.7 60.8,79.8 67.3,77.6 C73.8,75.4 81.9,72.7 86.8,70.3 C91.7,67.8 93.3,65.0 96.6,63.0 C99.8,60.9 103.5,59.3 106.3,58.1 C109.2,56.9 112.4,56.0 113.6,55.6 C114.0,54.8 115.1,54.8 116.1,50.8 C117.1,46.7 118.3,38.2 119.7,31.2 C121.2,24.3 123.8,12.9 124.6,9.3 C125.8,12.1 129.5,20.3 131.9,26.4 C134.4,32.5 137.4,40.6 139.3,45.9 C141.1,51.2 142.3,56.0 142.9,58.1 C144.8,59.1 150.2,60.7 154.0,64.0 C157.8,67.3 162.2,72.8 166.0,78.0 C169.8,83.2 173.3,89.7 177.0,95.0 C180.7,100.3 182.5,106.7 188.0,110.0 C193.5,113.3 201.3,114.0 210.0,115.0 C218.7,116.0 230.7,115.7 240.0,116.0 C249.3,116.3 258.3,116.2 266.0,117.0 C273.7,117.8 280.0,118.8 286.0,121.0 C292.0,123.2 299.3,128.5 302.0,130.0 C303.3,132.7 307.7,139.3 310.0,146.0 C312.3,152.7 314.3,161.7 316.0,170.0 C317.7,178.3 319.3,188.7 320.0,196.0 C320.7,203.3 320.7,209.3 320.0,214.0 C319.3,218.7 316.7,222.3 316.0,224.0 C315.2,223.7 311.8,222.3 311.0,222.0 C311.2,219.3 312.2,213.0 312.0,206.0 C311.8,199.0 311.0,188.0 310.0,180.0 C309.0,172.0 307.3,163.7 306.0,158.0 C304.7,152.3 302.7,148.0 302.0,146.0 C302.7,147.7 305.3,151.7 306.0,156.0 C306.7,160.3 306.7,167.0 306.0,172.0 C305.3,177.0 302.3,181.7 302.0,186.0 C301.7,190.3 302.7,194.0 304.0,198.0 C305.3,202.0 309.0,208.0 310.0,210.0 C309.7,212.7 308.7,220.7 308.0,226.0 C307.3,231.3 306.3,238.3 306.0,242.0 C305.7,245.7 306.0,247.0 306.0,248.0 C306.3,248.7 309.3,251.2 308.0,252.0 C306.7,252.8 301.3,252.8 298.0,253.0 C294.7,253.2 290.3,253.5 288.0,253.0 C285.7,252.5 284.7,250.5 284.0,250.0 C285.0,249.0 288.7,247.3 290.0,244.0 C291.3,240.7 291.3,234.7 292.0,230.0 C292.7,225.3 293.7,218.3 294.0,216.0 C292.7,214.0 289.0,207.7 286.0,204.0 C283.0,200.3 279.0,197.3 276.0,194.0 C273.0,190.7 270.0,187.3 268.0,184.0 C266.0,180.7 265.7,177.0 264.0,174.0 C262.3,171.0 261.0,167.0 258.0,166.0 C255.0,165.0 251.0,166.7 246.0,168.0 C241.0,169.3 233.7,171.7 228.0,174.0 C222.3,176.3 216.3,179.7 212.0,182.0 C207.7,184.3 203.7,187.0 202.0,188.0 C201.3,190.0 199.0,194.7 198.0,200.0 C197.0,205.3 196.3,213.7 196.0,220.0 C195.7,226.3 195.7,233.7 196.0,238.0 C196.3,242.3 197.7,244.7 198.0,246.0 C198.3,247.0 201.3,250.8 200.0,252.0 C198.7,253.2 193.7,252.8 190.0,253.0 C186.3,253.2 180.7,253.5 178.0,253.0 C175.3,252.5 174.7,250.5 174.0,250.0 C174.7,249.0 177.3,247.7 178.0,244.0 C178.7,240.3 178.0,233.7 178.0,228.0 C178.0,222.3 178.3,215.3 178.0,210.0 C177.7,204.7 177.3,200.3 176.0,196.0 C174.7,191.7 172.7,188.0 170.0,184.0 C167.3,180.0 162.8,176.3 160.0,172.0 C157.2,167.7 154.5,162.7 153.0,158.0 C151.5,153.3 151.7,148.7 151.0,144.0 C150.3,139.3 150.2,134.7 149.0,130.0 C147.8,125.3 145.8,120.0 144.0,116.0 C142.2,112.0 140.2,108.7 138.0,106.0 C135.8,103.3 134.4,100.2 130.7,99.6 C127.1,98.9 121.4,101.6 116.1,102.0 C110.8,102.4 105.1,102.2 99.0,102.0 C92.9,101.8 86.0,101.4 79.5,100.8 C73.0,100.2 65.2,99.2 60.0,98.3 C54.7,97.5 49.8,96.3 47.8,95.9 Z" class="b-body"/><path d="M40.4,89.8 C41.7,88.8 43.3,85.7 47.8,83.7 C52.2,81.7 61.6,79.4 67.3,77.6 C73.0,75.8 78.3,72.7 81.9,72.7 C85.6,72.7 87.6,74.8 89.2,77.6 C90.9,80.4 92.1,86.1 91.7,89.8 C91.3,93.5 89.6,97.7 86.8,99.6 C84.0,101.4 79.1,101.0 74.6,100.8 C70.1,100.6 64.4,99.2 60.0,98.3 C55.5,97.5 49.8,96.3 47.8,95.9 Z" class="a-mask"/><path d="M113.6,55.6 C114.0,54.8 115.1,54.8 116.1,50.8 C117.1,46.7 118.3,38.2 119.7,31.2 C121.2,24.3 123.8,12.9 124.6,9.3 C125.8,12.1 129.5,20.3 131.9,26.4 C134.4,32.5 137.4,40.6 139.3,45.9 C141.1,51.2 144.8,55.6 142.9,58.1 C141.1,60.5 130.7,60.1 128.3,60.5 Z" class="a-ear"/><path d="M121.0,45.9 C121.6,41.4 123.2,21.1 124.6,19.0 C126.0,17.0 127.9,28.4 129.5,33.7 C131.1,39.0 133.6,47.9 134.4,50.8 Z" class="a-earin"/><path d="M47.8,95.9 C50.2,96.5 57.1,98.7 62.4,99.6 C67.7,100.4 74.2,101.0 79.5,100.8 C84.8,100.6 91.7,98.7 94.1,98.3" class="a-lip"/><ellipse cx="101.4" cy="70.3" rx="3.8" ry="2.8" class="a-eye"/><circle cx="102.6" cy="69.3" r="1" class="a-eyehl"/><ellipse cx="43.9" cy="89.8" rx="4.6" ry="3.8" class="a-eye"/><g class="bdg" id="m-mes-1" filter="url(#sh)"><circle cx="80" cy="99" r="8.5"/><text x="80" y="99.6">1</text></g><g class="bdg" id="m-mes-2" filter="url(#sh)"><circle cx="194" cy="121" r="8.5"/><text x="194" y="121.6">2</text></g><g class="bdg r" id="m-mes-3" filter="url(#sh)"><circle cx="204" cy="168" r="8.5"/><text x="204" y="168.6">3</text></g><g class="bdg r" id="m-mes-4" filter="url(#sh)"><circle cx="284" cy="160" r="8.5"/><text x="284" y="160.6">4</text></g><g class="bdg" id="m-mes-5" filter="url(#sh)"><circle cx="309" cy="140" r="8.5"/><text x="309" y="140.6">5</text></g><g class="bdg" id="m-mes-6" filter="url(#sh)"><circle cx="238" cy="138" r="8.5"/><text x="238" y="138.6">6</text></g></svg></div><div class="a-list"><div class="a-row" data-m="m-mes-1"><b class="">1</b><div class="tx">Gencives<small>couleur, humidité, TRC (appuyer, compter < 2 s)</small></div></div><div class="a-row" data-m="m-mes-2"><b class="">2</b><div class="tx">Pli de peau<small>pincer entre les omoplates, retour ≤ 1 s</small></div></div><div class="a-row" data-m="m-mes-3"><b class="r">3</b><div class="tx">Fréquence cardiaque<small>main à plat sur le thorax gauche, derrière le coude</small></div></div><div class="a-row" data-m="m-mes-4"><b class="r">4</b><div class="tx">Pouls fémoral<small>deux doigts à l'intérieur de la cuisse, en haut</small></div></div><div class="a-row" data-m="m-mes-5"><b class="">5</b><div class="tx">Température<small>rectale, sous la queue (thermomètre lubrifié)</small></div></div><div class="a-row" data-m="m-mes-6"><b class="">6</b><div class="tx">Respiration<small>compter les mouvements du thorax sur 15 s × 4</small></div></div></div></div>
+  <div class="apanel" id="av-hem"><div class="a-card"><svg viewBox="0 0 340 262" class="anat"><path d="M250.0,166.0 C252.0,168.0 258.7,174.0 262.0,178.0 C265.3,182.0 267.3,185.7 270.0,190.0 C272.7,194.3 276.0,199.7 278.0,204.0 C280.0,208.3 281.3,214.0 282.0,216.0 C281.7,218.3 280.3,225.3 280.0,230.0 C279.7,234.7 279.7,241.0 280.0,244.0 C280.3,247.0 281.7,247.3 282.0,248.0 C282.3,248.7 285.3,251.2 284.0,252.0 C282.7,252.8 277.3,252.8 274.0,253.0 C270.7,253.2 266.0,253.5 264.0,253.0 C262.0,252.5 262.3,250.5 262.0,250.0 C263.0,249.0 266.7,247.3 268.0,244.0 C269.3,240.7 269.7,234.3 270.0,230.0 C270.3,225.7 271.3,222.0 270.0,218.0 C268.7,214.0 265.0,210.0 262.0,206.0 C259.0,202.0 255.0,198.3 252.0,194.0 C249.0,189.7 245.3,182.3 244.0,180.0 Z" class="b-far"/><path d="M204.0,186.0 C205.3,188.3 210.7,194.0 212.0,200.0 C213.3,206.0 212.0,215.3 212.0,222.0 C212.0,228.7 211.7,236.0 212.0,240.0 C212.3,244.0 213.7,245.0 214.0,246.0 C214.3,247.0 217.3,250.8 216.0,252.0 C214.7,253.2 209.7,252.8 206.0,253.0 C202.3,253.2 196.3,253.5 194.0,253.0 C191.7,252.5 192.3,250.5 192.0,250.0 C192.7,249.0 195.3,248.0 196.0,244.0 C196.7,240.0 196.3,232.3 196.0,226.0 C195.7,219.7 194.7,212.0 194.0,206.0 C193.3,200.0 192.3,192.7 192.0,190.0 Z" class="b-far"/><path d="M40.4,89.8 C41.7,88.8 43.3,85.7 47.8,83.7 C52.2,81.7 60.8,79.8 67.3,77.6 C73.8,75.4 81.9,72.7 86.8,70.3 C91.7,67.8 93.3,65.0 96.6,63.0 C99.8,60.9 103.5,59.3 106.3,58.1 C109.2,56.9 112.4,56.0 113.6,55.6 C114.0,54.8 115.1,54.8 116.1,50.8 C117.1,46.7 118.3,38.2 119.7,31.2 C121.2,24.3 123.8,12.9 124.6,9.3 C125.8,12.1 129.5,20.3 131.9,26.4 C134.4,32.5 137.4,40.6 139.3,45.9 C141.1,51.2 142.3,56.0 142.9,58.1 C144.8,59.1 150.2,60.7 154.0,64.0 C157.8,67.3 162.2,72.8 166.0,78.0 C169.8,83.2 173.3,89.7 177.0,95.0 C180.7,100.3 182.5,106.7 188.0,110.0 C193.5,113.3 201.3,114.0 210.0,115.0 C218.7,116.0 230.7,115.7 240.0,116.0 C249.3,116.3 258.3,116.2 266.0,117.0 C273.7,117.8 280.0,118.8 286.0,121.0 C292.0,123.2 299.3,128.5 302.0,130.0 C303.3,132.7 307.7,139.3 310.0,146.0 C312.3,152.7 314.3,161.7 316.0,170.0 C317.7,178.3 319.3,188.7 320.0,196.0 C320.7,203.3 320.7,209.3 320.0,214.0 C319.3,218.7 316.7,222.3 316.0,224.0 C315.2,223.7 311.8,222.3 311.0,222.0 C311.2,219.3 312.2,213.0 312.0,206.0 C311.8,199.0 311.0,188.0 310.0,180.0 C309.0,172.0 307.3,163.7 306.0,158.0 C304.7,152.3 302.7,148.0 302.0,146.0 C302.7,147.7 305.3,151.7 306.0,156.0 C306.7,160.3 306.7,167.0 306.0,172.0 C305.3,177.0 302.3,181.7 302.0,186.0 C301.7,190.3 302.7,194.0 304.0,198.0 C305.3,202.0 309.0,208.0 310.0,210.0 C309.7,212.7 308.7,220.7 308.0,226.0 C307.3,231.3 306.3,238.3 306.0,242.0 C305.7,245.7 306.0,247.0 306.0,248.0 C306.3,248.7 309.3,251.2 308.0,252.0 C306.7,252.8 301.3,252.8 298.0,253.0 C294.7,253.2 290.3,253.5 288.0,253.0 C285.7,252.5 284.7,250.5 284.0,250.0 C285.0,249.0 288.7,247.3 290.0,244.0 C291.3,240.7 291.3,234.7 292.0,230.0 C292.7,225.3 293.7,218.3 294.0,216.0 C292.7,214.0 289.0,207.7 286.0,204.0 C283.0,200.3 279.0,197.3 276.0,194.0 C273.0,190.7 270.0,187.3 268.0,184.0 C266.0,180.7 265.7,177.0 264.0,174.0 C262.3,171.0 261.0,167.0 258.0,166.0 C255.0,165.0 251.0,166.7 246.0,168.0 C241.0,169.3 233.7,171.7 228.0,174.0 C222.3,176.3 216.3,179.7 212.0,182.0 C207.7,184.3 203.7,187.0 202.0,188.0 C201.3,190.0 199.0,194.7 198.0,200.0 C197.0,205.3 196.3,213.7 196.0,220.0 C195.7,226.3 195.7,233.7 196.0,238.0 C196.3,242.3 197.7,244.7 198.0,246.0 C198.3,247.0 201.3,250.8 200.0,252.0 C198.7,253.2 193.7,252.8 190.0,253.0 C186.3,253.2 180.7,253.5 178.0,253.0 C175.3,252.5 174.7,250.5 174.0,250.0 C174.7,249.0 177.3,247.7 178.0,244.0 C178.7,240.3 178.0,233.7 178.0,228.0 C178.0,222.3 178.3,215.3 178.0,210.0 C177.7,204.7 177.3,200.3 176.0,196.0 C174.7,191.7 172.7,188.0 170.0,184.0 C167.3,180.0 162.8,176.3 160.0,172.0 C157.2,167.7 154.5,162.7 153.0,158.0 C151.5,153.3 151.7,148.7 151.0,144.0 C150.3,139.3 150.2,134.7 149.0,130.0 C147.8,125.3 145.8,120.0 144.0,116.0 C142.2,112.0 140.2,108.7 138.0,106.0 C135.8,103.3 134.4,100.2 130.7,99.6 C127.1,98.9 121.4,101.6 116.1,102.0 C110.8,102.4 105.1,102.2 99.0,102.0 C92.9,101.8 86.0,101.4 79.5,100.8 C73.0,100.2 65.2,99.2 60.0,98.3 C54.7,97.5 49.8,96.3 47.8,95.9 Z" class="b-body"/><path d="M40.4,89.8 C41.7,88.8 43.3,85.7 47.8,83.7 C52.2,81.7 61.6,79.4 67.3,77.6 C73.0,75.8 78.3,72.7 81.9,72.7 C85.6,72.7 87.6,74.8 89.2,77.6 C90.9,80.4 92.1,86.1 91.7,89.8 C91.3,93.5 89.6,97.7 86.8,99.6 C84.0,101.4 79.1,101.0 74.6,100.8 C70.1,100.6 64.4,99.2 60.0,98.3 C55.5,97.5 49.8,96.3 47.8,95.9 Z" class="a-mask"/><path d="M113.6,55.6 C114.0,54.8 115.1,54.8 116.1,50.8 C117.1,46.7 118.3,38.2 119.7,31.2 C121.2,24.3 123.8,12.9 124.6,9.3 C125.8,12.1 129.5,20.3 131.9,26.4 C134.4,32.5 137.4,40.6 139.3,45.9 C141.1,51.2 144.8,55.6 142.9,58.1 C141.1,60.5 130.7,60.1 128.3,60.5 Z" class="a-ear"/><path d="M121.0,45.9 C121.6,41.4 123.2,21.1 124.6,19.0 C126.0,17.0 127.9,28.4 129.5,33.7 C131.1,39.0 133.6,47.9 134.4,50.8 Z" class="a-earin"/><path d="M47.8,95.9 C50.2,96.5 57.1,98.7 62.4,99.6 C67.7,100.4 74.2,101.0 79.5,100.8 C84.8,100.6 91.7,98.7 94.1,98.3" class="a-lip"/><ellipse cx="101.4" cy="70.3" rx="3.8" ry="2.8" class="a-eye"/><circle cx="102.6" cy="69.3" r="1" class="a-eyehl"/><ellipse cx="43.9" cy="89.8" rx="4.6" ry="3.8" class="a-eye"/><ellipse cx="160" cy="104" rx="14" ry="10" class="z-junc" transform="rotate(-45 160 104)"/><ellipse cx="180" cy="178" rx="12" ry="9" class="z-junc"/><ellipse cx="260" cy="168" rx="12" ry="8" class="z-junc"/><line x1="179" y1="204" x2="196" y2="204" class="z-tq"/><line x1="276" y1="182" x2="302" y2="174" class="z-tq"/><line x1="304" y1="142" x2="313" y2="139" class="z-tq"/><g class="bdg r" id="m-hem-1" filter="url(#sh)"><circle cx="148" cy="86" r="8.5"/><text x="148" y="86.6">1</text></g><g class="bdg r" id="m-hem-2" filter="url(#sh)"><circle cx="166" cy="192" r="8.5"/><text x="166" y="192.6">2</text></g><g class="bdg r" id="m-hem-3" filter="url(#sh)"><circle cx="250" cy="184" r="8.5"/><text x="250" y="184.6">3</text></g><g class="bdg" id="m-hem-4" filter="url(#sh)"><circle cx="186" cy="220" r="8.5"/><text x="186" y="220.6">4</text></g><g class="bdg" id="m-hem-5" filter="url(#sh)"><circle cx="296" cy="190" r="8.5"/><text x="296" y="190.6">5</text></g><g class="bdg" id="m-hem-6" filter="url(#sh)"><circle cx="324" cy="152" r="8.5"/><text x="324" y="152.6">6</text></g></svg></div>
+    <p class="a-intro" style="margin-top:8px"><span class="a-sw" style="background:rgba(255,59,47,.5)"></span>zone jonctionnelle (pas de garrot possible) &nbsp; <span class="a-sw" style="background:#ffd84a"></span>pose du garrot</p><div class="a-list"><div class="a-row" data-m="m-hem-1"><b class="r">1</b><div class="tx">Cou<small>zone jonctionnelle : packing + compression (pas de garrot)</small></div></div><div class="a-row" data-m="m-hem-2"><b class="r">2</b><div class="tx">Aisselle<small>zone jonctionnelle : packing + compression</small></div></div><div class="a-row" data-m="m-hem-3"><b class="r">3</b><div class="tx">Aine<small>zone jonctionnelle : packing + compression</small></div></div><div class="a-row" data-m="m-hem-4"><b class="">4</b><div class="tx">Patte avant<small>garrot : haut de l'avant-bras, sous le coude</small></div></div><div class="a-row" data-m="m-hem-5"><b class="">5</b><div class="tx">Patte arrière<small>garrot : sur la cuisse, au-dessus du grasset</small></div></div><div class="a-row" data-m="m-hem-6"><b class="">6</b><div class="tx">Queue<small>garrot : près de la base</small></div></div></div></div>
+  <div class="apanel" id="av-tho"><div class="a-card"><svg viewBox="0 0 340 262" class="anat"><path d="M250.0,166.0 C252.0,168.0 258.7,174.0 262.0,178.0 C265.3,182.0 267.3,185.7 270.0,190.0 C272.7,194.3 276.0,199.7 278.0,204.0 C280.0,208.3 281.3,214.0 282.0,216.0 C281.7,218.3 280.3,225.3 280.0,230.0 C279.7,234.7 279.7,241.0 280.0,244.0 C280.3,247.0 281.7,247.3 282.0,248.0 C282.3,248.7 285.3,251.2 284.0,252.0 C282.7,252.8 277.3,252.8 274.0,253.0 C270.7,253.2 266.0,253.5 264.0,253.0 C262.0,252.5 262.3,250.5 262.0,250.0 C263.0,249.0 266.7,247.3 268.0,244.0 C269.3,240.7 269.7,234.3 270.0,230.0 C270.3,225.7 271.3,222.0 270.0,218.0 C268.7,214.0 265.0,210.0 262.0,206.0 C259.0,202.0 255.0,198.3 252.0,194.0 C249.0,189.7 245.3,182.3 244.0,180.0 Z" class="b-far in"/><path d="M204.0,186.0 C205.3,188.3 210.7,194.0 212.0,200.0 C213.3,206.0 212.0,215.3 212.0,222.0 C212.0,228.7 211.7,236.0 212.0,240.0 C212.3,244.0 213.7,245.0 214.0,246.0 C214.3,247.0 217.3,250.8 216.0,252.0 C214.7,253.2 209.7,252.8 206.0,253.0 C202.3,253.2 196.3,253.5 194.0,253.0 C191.7,252.5 192.3,250.5 192.0,250.0 C192.7,249.0 195.3,248.0 196.0,244.0 C196.7,240.0 196.3,232.3 196.0,226.0 C195.7,219.7 194.7,212.0 194.0,206.0 C193.3,200.0 192.3,192.7 192.0,190.0 Z" class="b-far in"/><path d="M40.4,89.8 C41.7,88.8 43.3,85.7 47.8,83.7 C52.2,81.7 60.8,79.8 67.3,77.6 C73.8,75.4 81.9,72.7 86.8,70.3 C91.7,67.8 93.3,65.0 96.6,63.0 C99.8,60.9 103.5,59.3 106.3,58.1 C109.2,56.9 112.4,56.0 113.6,55.6 C114.0,54.8 115.1,54.8 116.1,50.8 C117.1,46.7 118.3,38.2 119.7,31.2 C121.2,24.3 123.8,12.9 124.6,9.3 C125.8,12.1 129.5,20.3 131.9,26.4 C134.4,32.5 137.4,40.6 139.3,45.9 C141.1,51.2 142.3,56.0 142.9,58.1 C144.8,59.1 150.2,60.7 154.0,64.0 C157.8,67.3 162.2,72.8 166.0,78.0 C169.8,83.2 173.3,89.7 177.0,95.0 C180.7,100.3 182.5,106.7 188.0,110.0 C193.5,113.3 201.3,114.0 210.0,115.0 C218.7,116.0 230.7,115.7 240.0,116.0 C249.3,116.3 258.3,116.2 266.0,117.0 C273.7,117.8 280.0,118.8 286.0,121.0 C292.0,123.2 299.3,128.5 302.0,130.0 C303.3,132.7 307.7,139.3 310.0,146.0 C312.3,152.7 314.3,161.7 316.0,170.0 C317.7,178.3 319.3,188.7 320.0,196.0 C320.7,203.3 320.7,209.3 320.0,214.0 C319.3,218.7 316.7,222.3 316.0,224.0 C315.2,223.7 311.8,222.3 311.0,222.0 C311.2,219.3 312.2,213.0 312.0,206.0 C311.8,199.0 311.0,188.0 310.0,180.0 C309.0,172.0 307.3,163.7 306.0,158.0 C304.7,152.3 302.7,148.0 302.0,146.0 C302.7,147.7 305.3,151.7 306.0,156.0 C306.7,160.3 306.7,167.0 306.0,172.0 C305.3,177.0 302.3,181.7 302.0,186.0 C301.7,190.3 302.7,194.0 304.0,198.0 C305.3,202.0 309.0,208.0 310.0,210.0 C309.7,212.7 308.7,220.7 308.0,226.0 C307.3,231.3 306.3,238.3 306.0,242.0 C305.7,245.7 306.0,247.0 306.0,248.0 C306.3,248.7 309.3,251.2 308.0,252.0 C306.7,252.8 301.3,252.8 298.0,253.0 C294.7,253.2 290.3,253.5 288.0,253.0 C285.7,252.5 284.7,250.5 284.0,250.0 C285.0,249.0 288.7,247.3 290.0,244.0 C291.3,240.7 291.3,234.7 292.0,230.0 C292.7,225.3 293.7,218.3 294.0,216.0 C292.7,214.0 289.0,207.7 286.0,204.0 C283.0,200.3 279.0,197.3 276.0,194.0 C273.0,190.7 270.0,187.3 268.0,184.0 C266.0,180.7 265.7,177.0 264.0,174.0 C262.3,171.0 261.0,167.0 258.0,166.0 C255.0,165.0 251.0,166.7 246.0,168.0 C241.0,169.3 233.7,171.7 228.0,174.0 C222.3,176.3 216.3,179.7 212.0,182.0 C207.7,184.3 203.7,187.0 202.0,188.0 C201.3,190.0 199.0,194.7 198.0,200.0 C197.0,205.3 196.3,213.7 196.0,220.0 C195.7,226.3 195.7,233.7 196.0,238.0 C196.3,242.3 197.7,244.7 198.0,246.0 C198.3,247.0 201.3,250.8 200.0,252.0 C198.7,253.2 193.7,252.8 190.0,253.0 C186.3,253.2 180.7,253.5 178.0,253.0 C175.3,252.5 174.7,250.5 174.0,250.0 C174.7,249.0 177.3,247.7 178.0,244.0 C178.7,240.3 178.0,233.7 178.0,228.0 C178.0,222.3 178.3,215.3 178.0,210.0 C177.7,204.7 177.3,200.3 176.0,196.0 C174.7,191.7 172.7,188.0 170.0,184.0 C167.3,180.0 162.8,176.3 160.0,172.0 C157.2,167.7 154.5,162.7 153.0,158.0 C151.5,153.3 151.7,148.7 151.0,144.0 C150.3,139.3 150.2,134.7 149.0,130.0 C147.8,125.3 145.8,120.0 144.0,116.0 C142.2,112.0 140.2,108.7 138.0,106.0 C135.8,103.3 134.4,100.2 130.7,99.6 C127.1,98.9 121.4,101.6 116.1,102.0 C110.8,102.4 105.1,102.2 99.0,102.0 C92.9,101.8 86.0,101.4 79.5,100.8 C73.0,100.2 65.2,99.2 60.0,98.3 C54.7,97.5 49.8,96.3 47.8,95.9 Z" class="b-body in"/><path d="M40.4,89.8 C41.7,88.8 43.3,85.7 47.8,83.7 C52.2,81.7 61.6,79.4 67.3,77.6 C73.0,75.8 78.3,72.7 81.9,72.7 C85.6,72.7 87.6,74.8 89.2,77.6 C90.9,80.4 92.1,86.1 91.7,89.8 C91.3,93.5 89.6,97.7 86.8,99.6 C84.0,101.4 79.1,101.0 74.6,100.8 C70.1,100.6 64.4,99.2 60.0,98.3 C55.5,97.5 49.8,96.3 47.8,95.9 Z" class="a-mask in"/><path d="M47.8,95.9 C50.2,96.5 57.1,98.7 62.4,99.6 C67.7,100.4 74.2,101.0 79.5,100.8 C84.8,100.6 91.7,98.7 94.1,98.3" class="a-lip"/><ellipse cx="101.4" cy="70.3" rx="3.8" ry="2.8" class="a-eye"/><circle cx="102.6" cy="69.3" r="1" class="a-eyehl"/><ellipse cx="43.9" cy="89.8" rx="4.6" ry="3.8" class="a-eye"/><path d="M176.0,128.0 C180.0,126.8 191.0,122.2 200.0,121.0 C209.0,119.8 221.0,120.5 230.0,121.0 C239.0,121.5 250.7,120.8 254.0,124.0 C257.3,127.2 252.3,134.3 250.0,140.0 C247.7,145.7 243.7,152.0 240.0,158.0 C236.3,164.0 232.7,171.3 228.0,176.0 C223.3,180.7 218.0,184.3 212.0,186.0 C206.0,187.7 197.7,188.0 192.0,186.0 C186.3,184.0 181.3,180.0 178.0,174.0 C174.7,168.0 173.0,154.0 172.0,150.0 Z" class="o-lung"/><path d="M206.5,121.0 L205.9,126.3 L205.2,131.7 L204.4,137.0 L203.4,142.3 L202.3,147.7 L201.0,153.0 L199.6,158.3 L198.1,163.7 L196.4,169.0 L194.6,174.3 L192.6,179.7 L190.5,185.0 L201.5,183.0 L203.6,177.8 L205.6,172.7 L207.4,167.5 L209.1,162.3 L210.6,157.2 L212.0,152.0 L213.3,146.8 L214.4,141.7 L215.4,136.5 L216.2,131.3 L216.9,126.2 L217.5,121.0 Z" class="t-band4"/><path d="M223.0,121.0 L222.4,126.1 L221.7,131.2 L220.9,136.2 L219.9,141.3 L218.8,146.4 L217.5,151.5 L216.1,156.6 L214.6,161.7 L212.9,166.8 L211.1,171.8 L209.1,176.9 L207.0,182.0 L218.0,180.0 L220.1,175.1 L222.1,170.2 L223.9,165.2 L225.6,160.3 L227.1,155.4 L228.5,150.5 L229.8,145.6 L230.9,140.7 L231.9,135.8 L232.7,130.8 L233.4,125.9 L234.0,121.0 Z" class="t-band7"/><path d="M190.0,121.0 Q187.0,154.5 174.0,188.0" class="t-rib"/><path d="M195.5,121.0 Q192.5,154.0 179.5,187.0" class="t-rib"/><path d="M201.0,121.0 Q198.0,153.5 185.0,186.0" class="t-rib"/><path d="M206.5,121.0 Q203.5,153.0 190.5,185.0" class="t-rib"/><path d="M212.0,121.0 Q209.0,152.5 196.0,184.0" class="t-rib"/><path d="M217.5,121.0 Q214.5,152.0 201.5,183.0" class="t-rib"/><path d="M223.0,121.0 Q220.0,151.5 207.0,182.0" class="t-rib"/><path d="M228.5,121.0 Q225.5,151.0 212.5,181.0" class="t-rib"/><path d="M234.0,121.0 Q231.0,150.5 218.0,180.0" class="t-rib"/><path d="M239.5,121.0 Q240.5,146.5 231.5,172.0" class="t-rib"/><path d="M245.0,121.0 Q247.0,142.5 239.0,164.0" class="t-rib"/><path d="M250.5,121.0 Q253.5,138.5 246.5,156.0" class="t-rib"/><path d="M256.0,121.0 Q260.0,134.5 254.0,148.0" class="t-rib"/><path d="M258,122 C244,132 234,148 234,164 C234,174 236,182 240,186" class="o-diaph"/><path d="M184.0,154.0 C186.0,152.7 192.0,146.3 196.0,146.0 C200.0,145.7 205.7,148.7 208.0,152.0 C210.3,155.3 211.0,161.3 210.0,166.0 C209.0,170.7 204.5,176.5 202.0,180.0 C199.5,183.5 197.3,187.0 195.0,187.0 C192.7,187.0 189.8,183.5 188.0,180.0 C186.2,176.5 184.7,168.3 184.0,166.0 Z" class="o-heart"/><path d="M192,240 L192,214 L185,214 L196,199 L207,214 L200,214 L200,240 Z" class="t-arrow"/><g class="bdg r" id="m-tho-1" filter="url(#sh)"><circle cx="214" cy="228" r="8.5"/><text x="214" y="228.6">1</text></g><circle cx="204" cy="136" r="9" class="t-target"/><g class="bdg r" id="m-tho-2" filter="url(#sh)"><circle cx="188" cy="106" r="8.5"/><text x="188" y="106.6">2</text></g><line x1="197" y1="114" x2="202" y2="128" class="t-lead"/><path d="M220,152 l8,8 m0,-8 l-8,8" class="t-x"/><g class="bdg r" id="m-tho-3" filter="url(#sh)"><circle cx="236" cy="104" r="8.5"/><text x="236" y="104.6">3</text></g><line x1="234" y1="112" x2="226" y2="150" class="t-lead"/><g class="bdg" id="m-tho-4" filter="url(#sh)"><circle cx="226" cy="178" r="8.5"/><text x="226" y="178.6">4</text></g></svg></div><div class="a-list"><div class="a-row" data-m="m-tho-1"><b class="r">1</b><div class="tx">RCP thorax profond<small>chien sur le côté, mains sur le cœur, juste au-dessus du coude</small></div></div><div class="a-row" data-m="m-tho-2"><b class="r">2</b><div class="tx">RCP thorax rond<small>mains sur la partie la plus large du thorax</small></div></div><div class="a-row" data-m="m-tho-3"><b class="r">3</b><div class="tx">Exsufflation<small>entre les côtes 7 et 9, à mi-hauteur (si formé)</small></div></div><div class="a-row" data-m="m-tho-4"><b class="">4</b><div class="tx">Plaie du thorax<small>main gantée puis chest seal, chercher l'orifice de sortie</small></div></div></div><p class="a-intro" style="margin-top:8px"><span class="a-sw" style="background:rgba(255,59,47,.55)"></span>côtes 4 à 6 : cœur &nbsp; <span class="a-sw" style="background:rgba(255,216,74,.6)"></span>côtes 7 à 9 : exsufflation</p></div>
+  <div class="apanel" id="av-org"><div class="a-card"><svg viewBox="0 0 340 262" class="anat"><path d="M250.0,166.0 C252.0,168.0 258.7,174.0 262.0,178.0 C265.3,182.0 267.3,185.7 270.0,190.0 C272.7,194.3 276.0,199.7 278.0,204.0 C280.0,208.3 281.3,214.0 282.0,216.0 C281.7,218.3 280.3,225.3 280.0,230.0 C279.7,234.7 279.7,241.0 280.0,244.0 C280.3,247.0 281.7,247.3 282.0,248.0 C282.3,248.7 285.3,251.2 284.0,252.0 C282.7,252.8 277.3,252.8 274.0,253.0 C270.7,253.2 266.0,253.5 264.0,253.0 C262.0,252.5 262.3,250.5 262.0,250.0 C263.0,249.0 266.7,247.3 268.0,244.0 C269.3,240.7 269.7,234.3 270.0,230.0 C270.3,225.7 271.3,222.0 270.0,218.0 C268.7,214.0 265.0,210.0 262.0,206.0 C259.0,202.0 255.0,198.3 252.0,194.0 C249.0,189.7 245.3,182.3 244.0,180.0 Z" class="b-far in"/><path d="M204.0,186.0 C205.3,188.3 210.7,194.0 212.0,200.0 C213.3,206.0 212.0,215.3 212.0,222.0 C212.0,228.7 211.7,236.0 212.0,240.0 C212.3,244.0 213.7,245.0 214.0,246.0 C214.3,247.0 217.3,250.8 216.0,252.0 C214.7,253.2 209.7,252.8 206.0,253.0 C202.3,253.2 196.3,253.5 194.0,253.0 C191.7,252.5 192.3,250.5 192.0,250.0 C192.7,249.0 195.3,248.0 196.0,244.0 C196.7,240.0 196.3,232.3 196.0,226.0 C195.7,219.7 194.7,212.0 194.0,206.0 C193.3,200.0 192.3,192.7 192.0,190.0 Z" class="b-far in"/><path d="M40.4,89.8 C41.7,88.8 43.3,85.7 47.8,83.7 C52.2,81.7 60.8,79.8 67.3,77.6 C73.8,75.4 81.9,72.7 86.8,70.3 C91.7,67.8 93.3,65.0 96.6,63.0 C99.8,60.9 103.5,59.3 106.3,58.1 C109.2,56.9 112.4,56.0 113.6,55.6 C114.0,54.8 115.1,54.8 116.1,50.8 C117.1,46.7 118.3,38.2 119.7,31.2 C121.2,24.3 123.8,12.9 124.6,9.3 C125.8,12.1 129.5,20.3 131.9,26.4 C134.4,32.5 137.4,40.6 139.3,45.9 C141.1,51.2 142.3,56.0 142.9,58.1 C144.8,59.1 150.2,60.7 154.0,64.0 C157.8,67.3 162.2,72.8 166.0,78.0 C169.8,83.2 173.3,89.7 177.0,95.0 C180.7,100.3 182.5,106.7 188.0,110.0 C193.5,113.3 201.3,114.0 210.0,115.0 C218.7,116.0 230.7,115.7 240.0,116.0 C249.3,116.3 258.3,116.2 266.0,117.0 C273.7,117.8 280.0,118.8 286.0,121.0 C292.0,123.2 299.3,128.5 302.0,130.0 C303.3,132.7 307.7,139.3 310.0,146.0 C312.3,152.7 314.3,161.7 316.0,170.0 C317.7,178.3 319.3,188.7 320.0,196.0 C320.7,203.3 320.7,209.3 320.0,214.0 C319.3,218.7 316.7,222.3 316.0,224.0 C315.2,223.7 311.8,222.3 311.0,222.0 C311.2,219.3 312.2,213.0 312.0,206.0 C311.8,199.0 311.0,188.0 310.0,180.0 C309.0,172.0 307.3,163.7 306.0,158.0 C304.7,152.3 302.7,148.0 302.0,146.0 C302.7,147.7 305.3,151.7 306.0,156.0 C306.7,160.3 306.7,167.0 306.0,172.0 C305.3,177.0 302.3,181.7 302.0,186.0 C301.7,190.3 302.7,194.0 304.0,198.0 C305.3,202.0 309.0,208.0 310.0,210.0 C309.7,212.7 308.7,220.7 308.0,226.0 C307.3,231.3 306.3,238.3 306.0,242.0 C305.7,245.7 306.0,247.0 306.0,248.0 C306.3,248.7 309.3,251.2 308.0,252.0 C306.7,252.8 301.3,252.8 298.0,253.0 C294.7,253.2 290.3,253.5 288.0,253.0 C285.7,252.5 284.7,250.5 284.0,250.0 C285.0,249.0 288.7,247.3 290.0,244.0 C291.3,240.7 291.3,234.7 292.0,230.0 C292.7,225.3 293.7,218.3 294.0,216.0 C292.7,214.0 289.0,207.7 286.0,204.0 C283.0,200.3 279.0,197.3 276.0,194.0 C273.0,190.7 270.0,187.3 268.0,184.0 C266.0,180.7 265.7,177.0 264.0,174.0 C262.3,171.0 261.0,167.0 258.0,166.0 C255.0,165.0 251.0,166.7 246.0,168.0 C241.0,169.3 233.7,171.7 228.0,174.0 C222.3,176.3 216.3,179.7 212.0,182.0 C207.7,184.3 203.7,187.0 202.0,188.0 C201.3,190.0 199.0,194.7 198.0,200.0 C197.0,205.3 196.3,213.7 196.0,220.0 C195.7,226.3 195.7,233.7 196.0,238.0 C196.3,242.3 197.7,244.7 198.0,246.0 C198.3,247.0 201.3,250.8 200.0,252.0 C198.7,253.2 193.7,252.8 190.0,253.0 C186.3,253.2 180.7,253.5 178.0,253.0 C175.3,252.5 174.7,250.5 174.0,250.0 C174.7,249.0 177.3,247.7 178.0,244.0 C178.7,240.3 178.0,233.7 178.0,228.0 C178.0,222.3 178.3,215.3 178.0,210.0 C177.7,204.7 177.3,200.3 176.0,196.0 C174.7,191.7 172.7,188.0 170.0,184.0 C167.3,180.0 162.8,176.3 160.0,172.0 C157.2,167.7 154.5,162.7 153.0,158.0 C151.5,153.3 151.7,148.7 151.0,144.0 C150.3,139.3 150.2,134.7 149.0,130.0 C147.8,125.3 145.8,120.0 144.0,116.0 C142.2,112.0 140.2,108.7 138.0,106.0 C135.8,103.3 134.4,100.2 130.7,99.6 C127.1,98.9 121.4,101.6 116.1,102.0 C110.8,102.4 105.1,102.2 99.0,102.0 C92.9,101.8 86.0,101.4 79.5,100.8 C73.0,100.2 65.2,99.2 60.0,98.3 C54.7,97.5 49.8,96.3 47.8,95.9 Z" class="b-body in"/><path d="M40.4,89.8 C41.7,88.8 43.3,85.7 47.8,83.7 C52.2,81.7 61.6,79.4 67.3,77.6 C73.0,75.8 78.3,72.7 81.9,72.7 C85.6,72.7 87.6,74.8 89.2,77.6 C90.9,80.4 92.1,86.1 91.7,89.8 C91.3,93.5 89.6,97.7 86.8,99.6 C84.0,101.4 79.1,101.0 74.6,100.8 C70.1,100.6 64.4,99.2 60.0,98.3 C55.5,97.5 49.8,96.3 47.8,95.9 Z" class="a-mask in"/><path d="M47.8,95.9 C50.2,96.5 57.1,98.7 62.4,99.6 C67.7,100.4 74.2,101.0 79.5,100.8 C84.8,100.6 91.7,98.7 94.1,98.3" class="a-lip"/><ellipse cx="101.4" cy="70.3" rx="3.8" ry="2.8" class="a-eye"/><circle cx="102.6" cy="69.3" r="1" class="a-eyehl"/><ellipse cx="43.9" cy="89.8" rx="4.6" ry="3.8" class="a-eye"/><path d="M176.0,128.0 C180.0,126.8 191.0,122.2 200.0,121.0 C209.0,119.8 221.0,120.5 230.0,121.0 C239.0,121.5 250.7,120.8 254.0,124.0 C257.3,127.2 252.3,134.3 250.0,140.0 C247.7,145.7 243.7,152.0 240.0,158.0 C236.3,164.0 232.7,171.3 228.0,176.0 C223.3,180.7 218.0,184.3 212.0,186.0 C206.0,187.7 197.7,188.0 192.0,186.0 C186.3,184.0 181.3,180.0 178.0,174.0 C174.7,168.0 173.0,154.0 172.0,150.0 Z" class="o-lung"/><path d="M258,122 C244,132 234,148 234,164 C234,174 236,182 240,186" class="o-diaph"/><path d="M240.0,126.0 C242.3,125.7 250.3,122.3 254.0,124.0 C257.7,125.7 261.3,130.7 262.0,136.0 C262.7,141.3 260.0,149.7 258.0,156.0 C256.0,162.3 253.0,169.3 250.0,174.0 C247.0,178.7 242.3,184.7 240.0,184.0 C237.7,183.3 236.5,176.3 236.0,170.0 C235.5,163.7 236.8,150.0 237.0,146.0 Z" class="o-liver"/><path d="M258.0,126.0 C260.0,125.3 266.3,121.3 270.0,122.0 C273.7,122.7 278.7,126.3 280.0,130.0 C281.3,133.7 280.3,141.0 278.0,144.0 C275.7,147.0 269.2,148.7 266.0,148.0 C262.8,147.3 260.2,141.3 259.0,140.0 Z" class="o-stom"/><path d="M258,150 C266,148 276,150 276,156 C268,158 260,156 258,150 Z" class="o-spleen"/><path d="M254.0,166.0 C255.7,164.3 259.7,158.3 264.0,156.0 C268.3,153.7 275.3,152.3 280.0,152.0 C284.7,151.7 289.7,152.0 292.0,154.0 C294.3,156.0 295.7,161.5 294.0,164.0 C292.3,166.5 286.7,168.0 282.0,169.0 C277.3,170.0 268.7,169.8 266.0,170.0 Z" class="o-gut"/><path d="M262,164 C268,158 274,166 280,160 C286,156 290,162 288,165" class="o-gutl"/><ellipse cx="278" cy="124" rx="7" ry="4.2" class="o-kid"/><ellipse cx="299" cy="158" rx="6.5" ry="5.5" class="o-blad"/><ellipse cx="124" cy="66" rx="13" ry="8" class="o-brain"/><path d="M136,102 C150,110 164,122 178,140" class="o-trach"/><path d="M136,102 C150,110 164,122 178,140" class="o-trachr"/><path d="M134,100 C148,106 160,116 172,136" class="o-vein"/><path d="M134,92 C150,100 164,112 176,132 C184,142 188,150 192,154" class="o-art"/><path d="M282,140 C284,160 284,180 284,198 C284,212 284,226 286,240" class="o-art"/><path d="M184.0,154.0 C186.0,152.7 192.0,146.3 196.0,146.0 C200.0,145.7 205.7,148.7 208.0,152.0 C210.3,155.3 211.0,161.3 210.0,166.0 C209.0,170.7 204.5,176.5 202.0,180.0 C199.5,183.5 197.3,187.0 195.0,187.0 C192.7,187.0 189.8,183.5 188.0,180.0 C186.2,176.5 184.7,168.3 184.0,166.0 Z" class="o-heart"/></svg></div><div class="a-list"><div class="a-row"><i style="background:#ecc7c7"></i><div class="tx">Cerveau<small>trauma crânien : tête, cou et thorax surélevés à 30°</small></div></div><div class="a-row"><i style="background:#bcd3e3"></i><div class="tx">Trachée<small>voie aérienne</small></div></div><div class="a-row"><i style="background:#ff5040"></i><div class="tx">Artères (carotide, fémorale)<small>pouls, saignement grave</small></div></div><div class="a-row"><i style="background:#5a7fd6"></i><div class="tx">Veine jugulaire<small>ne pas comprimer le cou</small></div></div><div class="a-row"><i style="background:#e7a9b0"></i><div class="tx">Poumons<small></small></div></div><div class="a-row"><i style="background:#d63a2e"></i><div class="tx">Cœur<small>côtes 4 à 6, au-dessus du coude</small></div></div><div class="a-row"><i style="background:#f2ead8"></i><div class="tx">Diaphragme<small>pointillés</small></div></div><div class="a-row"><i style="background:#7e3326"></i><div class="tx">Foie<small></small></div></div><div class="a-row"><i style="background:#d8b46a"></i><div class="tx">Estomac<small>torsion : urgence absolue</small></div></div><div class="a-row"><i style="background:#9b5fc0"></i><div class="tx">Rate<small></small></div></div><div class="a-row"><i style="background:#f0b9a0"></i><div class="tx">Intestins<small>éviscération : ne pas forcer</small></div></div><div class="a-row"><i style="background:#a5543f"></i><div class="tx">Reins<small></small></div></div><div class="a-row"><i style="background:#f2e56b"></i><div class="tx">Vessie<small></small></div></div></div></div>
+  <p class="disc">Touche un repère dans la liste pour le voir sur le schéma. Touche le schéma pour l'agrandir. Schéma simplifié d'un chien type Malinois : positions indicatives.</p>
+</section>
+
 <!-- ============ GUIDE ============ -->
 <section class="page guide" id="p-guide">
-  <h3>Valeurs normales (chien adulte, grand gabarit)</h3>
+  <h3>Valeurs normales (chien adulte 25–40 kg, type Malinois)</h3>
   <table>
     <tr><th>Constante</th><th>Repos</th><th>Danger</th></tr>
-    <tr><td>Température rectale</td><td>37,5 – 39,2 °C</td><td>≥ 41 °C ou &lt; 37 °C</td></tr>
-    <tr><td>Fréquence cardiaque</td><td>60 – 120 bpm</td><td>&gt; 200 au repos ou &lt; 40</td></tr>
+    <tr><td>Température rectale</td><td>37,5 – 39,2 °C</td><td>≥ 41 °C ou &lt; 35,5 °C</td></tr>
+    <tr><td>Fréquence cardiaque</td><td>60 – 100 bpm</td><td>&gt; 180 au repos ou &lt; 40</td></tr>
     <tr><td>Fréquence respiratoire</td><td>10 – 30 /min</td><td>Respiration difficile, bruyante</td></tr>
     <tr><td>TRC (gencive)</td><td>1 – 2 s</td><td>&gt; 3 s</td></tr>
-    <tr><td>Pli de peau</td><td>retour immédiat</td><td>&gt; 3 s ou reste plissé</td></tr>
+    <tr><td>Pli de peau</td><td>retour en ≤ 1 s</td><td>reste plissé</td></tr>
     <tr><td>Muqueuses</td><td>roses, humides</td><td>blanches, bleues, grises</td></tr>
   </table>
 
   <h3>Après le travail</h3>
-  <p>Chez un chien de travail, température et cœur montent beaucoup pendant l'effort : jusqu'à ~40 °C et 180 bpm, c'est attendu. Ce qui compte, c'est la <b>récupération</b> : la température doit repasser sous 39,5 °C et le cœur sous 120 bpm en 10 à 30 minutes au calme et au frais. Refais une mesure 10–15 min après.</p>
+  <p>Chez un chien de travail entraîné, température et cœur montent beaucoup pendant l'effort : 40 °C et plus de 150 bpm sont fréquents. Ce qui compte, c'est la <b>récupération</b> : au calme et au frais, les valeurs doivent baisser nettement et revenir vers la normale en 15 à 30 min. Attention, la température peut encore monter quelques minutes après l'arrêt. Refais une mesure 10–15 min après.</p>
 
   <h3>Coup de chaleur : réflexes</h3>
   <ul>
     <li>Arrêter le travail, mettre à l'ombre / courant d'air.</li>
-    <li>Mouiller abondamment jusqu'à la peau avec de l'eau tempérée ou fraîche (pas glacée), ventilateur ou clim.</li>
-    <li>Laisser boire de petites quantités s'il est conscient.</li>
+    <li><b>Pas de muselière</b> (il doit haleter pour se refroidir).</li>
+    <li>Mouiller abondamment jusqu'à la peau avec de l'eau tempérée ou fraîche (15–30 °C, pas glacée), ventilateur ou clim.</li>
+    <li>Laisser boire de l'eau fraîche s'il est conscient.</li>
     <li>Contrôler la température toutes les 5 min, <b>arrêter le refroidissement à 39,5 °C</b>.</li>
     <li>Partir chez le vétérinaire même s'il a l'air d'aller mieux.</li>
   </ul>
@@ -151,7 +228,7 @@ nav button.on{color:var(--acc)}
 
   <h3>Conseil</h3>
   <p>Note les constantes de ton chien au repos plusieurs fois, quand il va bien : c'est sa référence personnelle, plus utile que les moyennes.</p>
-  <p class="disc">Sources : cours de pathologie des carnivores (examen général), Joint Trauma System – K9 Clinical Practice Guideline Heat Injury (2025), revues vétérinaires sur le coup de chaleur canin.</p>
+  <p class="disc">Sources : Merck/MSD Veterinary Manual ; AAHA Fluid Therapy Guidelines ; Joint Trauma System – K9 Heat Injury CPG (2025) et K9 TCCC Guidelines ; RECOVER (réanimation) ; études sur chiens de travail et chiens de police.</p>
 </section>
 
 <!-- ============ SECOURS K9 TECC ============ -->
@@ -163,11 +240,11 @@ nav button.on{color:var(--acc)}
     <li>Compression directe forte, tout de suite.</li>
     <li>Plaie profonde (cou, aine, aisselle, haut des membres) : <b>packing</b> gaze hémostatique + 3 min de pression.</li>
     <li>Pansement compressif circulaire par-dessus.</li>
-    <li><b>Garrot = dernier recours</b> (amputation, saignement qui continue) : élastique type SWAT-T, 5–8 cm au-dessus, jamais sur une articulation. <b>Noter l'heure.</b></li></ul></details>
+    <li><b>Garrot = dernier recours</b> (amputation, saignement qui continue malgré tout) : élastique type SWAT-T ou garrot spécial K9, <b>pas de garrot humain type CAT</b> (il glisse sur une patte). Le plus haut possible, au moins 5–8 cm au-dessus de la plaie, jamais sur une articulation. Serrer jusqu'à l'arrêt du saignement. <b>Noter l'heure.</b></li></ul></details>
 
   <details><summary>🫁 Plaie thorax soufflante (couteau, balle)</summary><ul>
     <li>Main gantée sur le trou immédiatement.</li>
-    <li>Chest seal (ventilé si possible) ; un peu de vaseline aide à coller sur les poils.</li>
+    <li>Chest seal (ventilé si possible) ; un peu de vaseline aide à coller sur les poils, sinon bande circulaire autour du thorax.</li>
     <li>Chercher un orifice de sortie.</li>
     <li>Si ça s'aggrave (respire vite bouche ouverte, refuse de se coucher, agité, gencives bleues) : <b>décoller un bord du pansement</b> pour laisser sortir l'air. Exsufflation à l'aiguille seulement si formé.</li></ul></details>
 
@@ -178,26 +255,26 @@ nav button.on{color:var(--acc)}
 
   <details><summary>😮‍💨 Voies aériennes / chien inconscient</summary><ul>
     <li>Retirer la muselière.</li>
-    <li>Couché sur le ventre (sphinx), tête et cou dans l'axe.</li>
-    <li>Ouvrir la gueule, tirer la langue vers l'avant.</li>
+    <li>Couché sur le ventre (sphinx) si possible, sinon sur le côté. Tête et cou dans l'axe.</li>
+    <li>Tirer doucement la langue hors de la gueule, par-dessus la mâchoire du bas.</li>
     <li>Pas de doigt à l'aveugle. Gueule ouverte avec laisse ou bande passée derrière les crocs.</li></ul></details>
 
   <details><summary>📉 Choc</summary><ul>
-    <li>Signes : gencives pâles, TRC &gt; 2 s, pouls fémoral faible, rapide, chien abattu, pattes froides.</li>
+    <li>Signes : gencives pâles, TRC &gt; 2 s, pouls fémoral faible, cœur &gt; 140 au repos, chien abattu sans trauma crânien, pattes froides.</li>
     <li>Arrêter les saignements d'abord.</li>
     <li>Allongé, au calme, couvert (couverture de survie). Rien à boire ni à manger.</li>
     <li>Évacuation véto urgente.</li></ul></details>
 
   <details><summary>❤️ Arrêt cardiaque (RCP)</summary><ul>
     <li>Pas de respiration, pas de pouls : chien couché sur le côté.</li>
-    <li>Compressions sur la partie la plus large du thorax, 100–120/min, enfoncer de 1/3 à 1/2 du thorax.</li>
+    <li>Mains sur la partie la plus large du thorax (si thorax étroit et profond : directement sur le cœur, au niveau du coude replié). 100–120/min, enfoncer de 1/3 à 1/2 de la largeur.</li>
     <li>Gueule fermée, souffler dans la truffe : <b>30 compressions / 2 insufflations</b>, changer de masseur toutes les 2 min.</li>
-    <li>Peu efficace sur trauma pénétrant ; chercher une cause réversible (pneumothorax).</li></ul></details>
+    <li>Sur blessure par balle ou couteau sans signe de vie : la RCP réussit très rarement ; si plaie du thorax, penser au pneumothorax (exsufflation si formé).</li></ul></details>
 
   <details><summary>🔥 Coup de chaleur</summary><ul>
     <li>Stop travail, à l'ombre, <b>pas de muselière</b>.</li>
     <li>Mouiller jusqu'à la peau à l'eau tempérée/fraîche (pas glacée) + ventiler.</li>
-    <li>Petites gorgées d'eau s'il est conscient.</li>
+    <li>Eau fraîche à boire s'il est conscient.</li>
     <li>Température toutes les 5 min, <b>stop refroidissement à 39,5 °C</b>. Véto même s'il va mieux.</li></ul></details>
 
   <details><summary>🎈 Torsion d'estomac</summary><ul>
@@ -206,38 +283,41 @@ nav button.on{color:var(--acc)}
     <li><b>Véto immédiatement</b>, appeler en route.</li></ul></details>
 
   <details><summary>🫃 Plaie de l'abdomen / organes sortis</summary><ul>
-    <li><b>Ne pas rentrer les organes.</b></li>
-    <li>Couvrir de compresses humides (sérum phy), puis film plastique ou pansement occlusif, sans serrer.</li>
-    <li>Empêcher le chien de lécher. Rien par la bouche.</li></ul></details>
+    <li><b>Ne pas forcer pour rentrer les organes</b>, ne pas appuyer dessus.</li>
+    <li>Rincer à l'eau propre/sérum phy, couvrir de compresses humides, puis film plastique ou pansement occlusif, sans serrer.</li>
+    <li>Empêcher le chien de lécher. Rien par la bouche. Couvrir le chien (il se refroidit vite).</li></ul></details>
 
   <details><summary>🦴 Fracture</summary><ul>
     <li>Museler, bouger le moins possible.</li>
     <li>Ne pas remettre en place. Plaie ouverte : couvrir.</li>
-    <li>Attelle (SAM splint) en prenant l'articulation au-dessus et en dessous, ou immobiliser au brancard.</li>
+    <li>Attelle (SAM splint) seulement sous le coude ou le genou, en prenant l'articulation au-dessus et en dessous. Plus haut : immobiliser sur brancard.</li>
     <li>Vérifier que la patte reste chaude sous le bandage.</li></ul></details>
 
   <details><summary>🧠 Trauma crânien</summary><ul>
-    <li>Tête légèrement surélevée (≈ 30°), cou dans l'axe, ne pas comprimer les jugulaires (collier).</li>
+    <li>Tête, cou et thorax surélevés d'environ 30°, dans l'axe. Retirer le collier, ne pas comprimer le cou.</li>
     <li>Surveiller la conscience et les pupilles.</li>
     <li>Prévenir le choc : arrêter les saignements, garder au chaud.</li></ul></details>
 
   <details><summary>👁️ Œil / gaz lacrymogène</summary><ul>
     <li>Rincer abondamment à l'eau ou au sérum phy.</li>
-    <li>Empêcher le frottement (collerette).</li>
-    <li>Objet planté dans l'œil : ne pas toucher, protéger.</li></ul></details>
+    <li>Empêcher le frottement (collerette). <b>Ne pas bander l'œil.</b></li>
+    <li>Objet planté dans l'œil : ne pas le retirer.</li></ul></details>
 
   <details><summary>☠️ Ingestion de stupéfiants / toxique</summary><ul>
     <li>Ne pas faire vomir sans avis véto.</li>
     <li>Récupérer le produit ou l'emballage.</li>
-    <li>Surveiller la respiration et la conscience. Véto en urgence (+ centre antipoison vétérinaire).</li></ul></details>
+    <li>Surveiller la respiration et la conscience. Véto en urgence.</li>
+    <li>Centres antipoison vétérinaires (8h30–minuit) : <a href="tel:0478871040">04 78 87 10 40</a> (CNITV Lyon) · <a href="tel:0240687740">02 40 68 77 40</a> (CAPAE Nantes).</li></ul></details>
 
   <details><summary>🔥 Brûlure</summary><ul>
     <li>Éloigner de la source, retirer harnais et collier (pas ce qui a fondu sur la peau).</li>
-    <li>Petite surface : eau tempérée dans les 20 min. Grande surface : couvrir, ne pas refroidir (hypothermie).</li>
+    <li>Petite surface : refroidir à l'eau fraîche (dans les 20 min). Grande surface : ne pas refroidir (risque d'hypothermie).</li>
+    <li>Couvrir de compresses sèches stériles.</li>
     <li>Pas de glace.</li></ul></details>
 
   <details><summary>🥶 Hypothermie</summary><ul>
-    <li>À l'abri, sécher en tamponnant, sur un isolant au sol, couvrir.</li>
+    <li>À l'abri, retirer le harnais mouillé, sécher en tamponnant, sur un isolant au sol, couvrir.</li>
+    <li>Pas de source de chaleur directement sur le poil (brûlure).</li>
     <li>Manipuler doucement, transport à plat.</li></ul></details>
 
   <details><summary>📞 Transmission au véto</summary><ul>
@@ -253,9 +333,11 @@ nav button.on{color:var(--acc)}
   <button data-p="saisie" class="on"><span>🐾</span>Constantes</button>
   <button data-p="hist"><span>📋</span>Historique</button>
   <button data-p="sec"><span>🚑</span>Secours</button>
+  <button data-p="anat"><span>🐕</span>Anatomie</button>
   <button data-p="guide"><span>📖</span>Guide</button>
 </nav>
 <div class="toast" id="toast"></div>
+<div class="zoom" id="zoom"><button class="zoom-x" aria-label="Fermer">✕</button><div id="zoomIn"></div></div>
 
 <script>
 // ---------- stockage sûr ----------
@@ -269,30 +351,30 @@ let ctx="repos";
 // eval(v, ctx) -> [niveau 0-3, message]
 const P=[
 {id:"temp",label:"Température rectale",sub:"thermomètre numérique",unit:"°C",type:"num",step:"0.1",
- ref:c=>c==="repos"?"Normal : 37,5 – 39,2 °C":"Après effort : jusqu'à 40 °C attendu, doit redescendre < 39,5 °C en 15–30 min",
+ ref:c=>c==="repos"?"Normal : 37,5 – 39,2 °C":"Après effort : jusqu'à ~40 °C fréquent, doit baisser en 15–30 min au calme",
  how:"Thermomètre numérique lubrifié (vaseline), introduit de 2–3 cm dans l'anus, plaqué contre la paroi. Attendre le bip. Le thermomètre d'oreille est moins fiable.",
  ev(v,c){ if(v<30||v>45)return[1,"Valeur incohérente, refais la mesure"];
-  if(v<35)return[3,"Hypothermie sévère : couvrir, réchauffer doucement, vétérinaire"];
-  if(v<37)return[2,"Hypothermie : réchauffer (couverture), surveiller, vétérinaire si ça persiste"];
-  if(v<37.5)return[1,"Un peu basse : recontrôle"];
+  if(v<35.5)return[3,"Hypothermie sévère : couvrir, isoler du sol, réchauffer doucement, urgence vétérinaire"];
+  if(v<36.7)return[2,"Hypothermie modérée : couvrir, isoler du sol, vétérinaire (penser au choc si blessé)"];
+  if(v<37.5)return[1,"Un peu basse : couvrir, recontrôle"];
   if(c==="repos"){ if(v<=39.2)return[0,"Température normale"];
    if(v<40)return[1,"Légère hyperthermie : repos au frais, recontrôle dans 15 min"];
    if(v<41)return[2,"Hyperthermie : arrêter, refroidir (eau tempérée), vétérinaire si pas de baisse"];
    return[3,"Coup de chaleur probable : refroidir immédiatement et urgence vétérinaire"];}
-  if(v<=40)return[0,"Normal après effort : vérifie qu'elle redescend"];
+  if(v<=40)return[0,"Normal après effort : vérifie qu'elle baisse dans 10–15 min"];
   if(v<40.6)return[1,"Élevée : stop, ombre, eau, recontrôle dans 10 min"];
-  if(v<41)return[2,"Très élevée : refroidir maintenant, stop à 39,5 °C"];
+  if(v<41)return[2,"Très élevée : refroidir maintenant, arrêter le refroidissement à 39,5 °C"];
   return[3,"Coup de chaleur : refroidir immédiatement et urgence vétérinaire"];}},
 
 {id:"fc",label:"Fréquence cardiaque",sub:"compter 15 s × 4",unit:"bpm",type:"num",step:"1",
- ref:c=>c==="repos"?"Normal : 60 – 120 bpm (chien sportif parfois 50–60)":"Après effort : jusqu'à ~180 bpm, doit redescendre < 120 en 10–15 min",
+ ref:c=>c==="repos"?"Normal : 60 – 100 bpm (chien sportif parfois 50–60)":"Après effort : jusqu'à ~180 bpm, doit nettement baisser en 10–15 min au calme",
  how:"Main à plat sur le thorax gauche, derrière le coude, ou pouls fémoral (intérieur de la cuisse, en haut). Compter 15 secondes et multiplier par 4. Chien calme, idéalement couché.",
  ev(v,c){ if(v<15||v>350)return[1,"Valeur incohérente, refais la mesure"];
   if(c==="repos"){ if(v<40)return[3,"Bradycardie importante : urgence vétérinaire"];
    if(v<60)return[1,"Basse : possible chez un chien très sportif au calme, sinon à surveiller"];
-   if(v<=120)return[0,"Fréquence normale"];
-   if(v<=160)return[1,"Élevée au repos : stress, douleur, chaleur ? Recontrôle au calme"];
-   if(v<=200)return[2,"Tachycardie au repos : anormal, vétérinaire"];
+   if(v<=100)return[0,"Fréquence normale"];
+   if(v<=140)return[1,"Élevée au repos : stress, douleur, chaleur ? Recontrôle au calme"];
+   if(v<=180)return[2,"Tachycardie au repos (> 140 : penser au choc), vétérinaire"];
    return[3,"Tachycardie sévère au repos : urgence vétérinaire"];}
   if(v<60)return[2,"Anormalement basse juste après un effort : vétérinaire"];
   if(v<=180)return[0,"Normal après effort : vérifie la récupération"];
@@ -337,18 +419,14 @@ const P=[
  how:"Regarder la gencive au-dessus des crocs ou l'intérieur de la lèvre, à la lumière naturelle si possible. Si la gencive est noire, regarder l'intérieur de la paupière inférieure."},
 
 {id:"hum",label:"Humidité des gencives",sub:"toucher avec le doigt",type:"sel",
- opts:[["","—"],["humide","Humides, brillantes",0,"Bien hydraté"],["colle","Collantes",1,"Déshydratation légère : faire boire, recontrôle"],["seche","Sèches",2,"Déshydratation : faire boire, vétérinaire si ça persiste ou s'il refuse de boire"]],
+ opts:[["","—"],["humide","Humides, brillantes",0,"Bien hydraté"],["colle","Collantes",1,"Déshydratation légère (~5–6 %) : faire boire, recontrôle"],["seche","Sèches",2,"Déshydratation modérée (~6–8 %) : faire boire, vétérinaire si ça persiste ou s'il refuse de boire"]],
  ref:()=>"Normal : humides et glissantes",
  how:"Passer le doigt sur la gencive : elle doit être humide et glisser. Si le doigt colle, le chien commence à être déshydraté."},
 
-{id:"pli",label:"Pli de peau",sub:"pincer la peau entre les épaules",unit:"s",type:"num",step:"0.5",
- ref:()=>"Normal : retour immédiat (< 1 s)",
- how:"Pincer et soulever la peau au-dessus des épaules (garrot), relâcher et compter le temps pour qu'elle reprenne sa place. Moins fiable chez un chien âgé ou très maigre.",
- ev(v){ if(v<0||v>30)return[1,"Valeur incohérente"];
-  if(v<=1)return[0,"Hydratation normale"];
-  if(v<=2)return[1,"Déshydratation légère (~5 %) : faire boire"];
-  if(v<=3)return[2,"Déshydratation modérée (~8 %) : vétérinaire"];
-  return[3,"Déshydratation sévère (≥ 10 %) : urgence vétérinaire"];}},
+{id:"pli",label:"Pli de peau",sub:"pincer la peau entre les épaules",type:"sel",
+ opts:[["","—"],["ok","Retour immédiat (≤ 1 s)",0,"Hydratation normale"],["lent","Retour un peu lent",1,"Déshydratation légère (~5–6 %) : faire boire"],["tres","Retour lent, pli visible quelques secondes",2,"Déshydratation modérée (~6–8 %) : faire boire, vétérinaire"],["reste","Le pli reste en place",3,"Déshydratation sévère (10–12 %) : urgence vétérinaire"]],
+ ref:()=>"Normal : la peau reprend sa place en 1 seconde maximum",
+ how:"Pincer et soulever la peau entre les omoplates, relâcher et regarder en combien de temps elle reprend sa place. Moins fiable chez un chien âgé ou très maigre. Des yeux enfoncés indiquent une déshydratation d'au moins 8 %."},
 
 {id:"cons",label:"État de conscience",type:"sel",
  opts:[["","—"],["a","Alerte, réactif",0,"Comportement normal"],["abat","Abattu, moins réactif que d'habitude",1,"Fatigue ou début de problème : recontrôle"],["voix","Réagit seulement à la voix",2,"Conscience altérée : vétérinaire"],["dou","Réagit seulement à la douleur",3,"Conscience très altérée : urgence"],["inc","Aucune réaction",3,"Inconscient : urgence absolue"]],
@@ -397,7 +475,7 @@ function combos(v,res){
     out.push([3,"Signes de coup de chaleur : arrêter, mouiller jusqu'à la peau (eau tempérée), ventiler, stop à 39,5 °C, vétérinaire"]);
   if((v.muq==="blanc"||v.muq==="rpale"||v.muq==="gris")&&(trc>2||v.pouls==="faible"))
     out.push([3,"Signes de choc (muqueuses pâles + circulation ralentie) : garder au chaud, au calme, urgence vétérinaire"]);
-  if((v.hum==="colle"||v.hum==="seche")&&parseFloat(v.pli)>1)
+  if((v.hum==="colle"||v.hum==="seche")&&v.pli&&v.pli!=="ok")
     out.push([2,"Déshydratation confirmée par 2 signes : faire boire, vétérinaire si pas d'amélioration"]);
   return out;
 }
@@ -508,6 +586,22 @@ document.querySelector("nav").addEventListener("click",e=>{
   document.querySelectorAll(".page").forEach(x=>x.classList.toggle("on",x.id==="p-"+b.dataset.p));
   window.scrollTo(0,0);
 });
+
+// ---------- vues anatomie ----------
+document.getElementById("aseg").addEventListener("click",e=>{const v=e.target.dataset.v;if(!v)return;
+  document.querySelectorAll("#aseg button").forEach(b=>b.classList.toggle("on",b.dataset.v===v));
+  document.querySelectorAll(".apanel").forEach(p=>p.classList.toggle("on",p.id==="av-"+v));
+  document.querySelectorAll(".bdg.hl,.a-row.hl").forEach(x=>x.classList.remove("hl"));});
+document.getElementById("p-anat").addEventListener("click",e=>{const r=e.target.closest(".a-row[data-m]");if(!r)return;
+  const on=!r.classList.contains("hl");
+  document.querySelectorAll(".bdg.hl,.a-row.hl").forEach(x=>x.classList.remove("hl"));
+  if(on){r.classList.add("hl");const m=document.getElementById(r.dataset.m);if(m){m.classList.add("hl");
+    r.closest(".apanel").querySelector(".a-card").scrollIntoView({behavior:"smooth",block:"center"});}}});
+// ---------- zoom schémas ----------
+const zm=document.getElementById("zoom");
+document.getElementById("p-anat").addEventListener("click",e=>{const sv=e.target.closest("svg.anat");if(!sv)return;
+  document.getElementById("zoomIn").innerHTML=sv.outerHTML;zm.classList.add("on")});
+zm.addEventListener("click",()=>zm.classList.remove("on"));
 
 // ---------- init ----------
 const tick=()=>document.getElementById("nowTxt").textContent="Relevé des constantes · "+new Date().toLocaleString("fr-FR",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"});
