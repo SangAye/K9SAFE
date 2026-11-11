@@ -3,40 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0f1419">
+<meta name="theme-color" content="#1d2617">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Constantes K9">
+<meta name="apple-mobile-web-app-title" content="TECC K9">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="icon" href="icon-192.png">
-<title>Constantes K9</title>
+<title>TECC K9 – Constantes</title>
 <style>
 :root{
-  --bg:#0f1419;--card:#1a2129;--card2:#222b35;--txt:#e8edf2;--mut:#8b98a5;--line:#2c3743;
-  --ok:#2ecc71;--watch:#f1c40f;--warn:#e67e22;--danger:#e74c3c;--acc:#3d9be9;
+  --bg:#171c14;--card:#232b1e;--card2:#2d3727;--txt:#efe8d6;--mut:#a7a084;--line:#3a4631;
+  --ok:#6fbf4a;--watch:#e2c044;--warn:#d9822b;--danger:#d64535;--acc:#c49a5a;--olive:#5f6f35;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:16px}
+html,body{margin:0;background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='%23c49a5a' fill-opacity='0.05' transform='rotate(-20 60 60)'%3E%3Cellipse cx='60' cy='72' rx='16' ry='13'/%3E%3Cellipse cx='42' cy='52' rx='6' ry='8'/%3E%3Cellipse cx='54' cy='44' rx='6' ry='8'/%3E%3Cellipse cx='66' cy='44' rx='6' ry='8'/%3E%3Cellipse cx='78' cy='52' rx='6' ry='8'/%3E%3C/g%3E%3C/svg%3E");color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:16px}
 body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
-header{position:sticky;top:0;z-index:10;background:var(--bg);padding:calc(10px + env(safe-area-inset-top)) 14px 8px;border-bottom:1px solid var(--line)}
-header h1{margin:0;font-size:19px;display:flex;align-items:center;gap:8px}
-header .sub{color:var(--mut);font-size:13px;margin-top:2px}
-#dogName{background:none;border:none;color:var(--txt);font:inherit;font-weight:700;width:9em;padding:0}
+header{position:sticky;top:0;z-index:10;background:linear-gradient(135deg,#2c3a1f,#1d2617);padding:calc(10px + env(safe-area-inset-top)) 14px 10px;border-bottom:3px solid var(--acc);display:flex;align-items:center;gap:12px}
+header .logo{width:46px;height:46px;flex:none}
+header .tag{font-size:11px;font-weight:800;letter-spacing:2.5px;color:var(--acc);text-transform:uppercase}
+header h1{margin:0;font-size:20px;line-height:1.15}
+header .sub{color:var(--mut);font-size:12px;margin-top:1px}
+#dogName{background:none;border:none;color:var(--txt);font:inherit;font-weight:800;width:10em;padding:0;letter-spacing:.5px}
 main{padding:12px}
 .seg{display:flex;background:var(--card);border-radius:12px;padding:4px;margin-bottom:12px}
 .seg button{flex:1;border:0;background:none;color:var(--mut);padding:10px 4px;border-radius:9px;font-size:14px;font-weight:600}
-.seg button.on{background:var(--acc);color:#fff}
+.seg button.on{background:var(--acc);color:#1b1f15}
 .banner{border-radius:14px;padding:14px;margin-bottom:12px;background:var(--card);border-left:6px solid var(--mut)}
 .banner h2{margin:0 0 4px;font-size:17px}
 .banner p{margin:0;font-size:14px;color:var(--txt)}
 .banner ul{margin:8px 0 0;padding-left:18px;font-size:14px}
 .banner li{margin:3px 0}
 .lv0{border-color:var(--ok)}.lv1{border-color:var(--watch)}.lv2{border-color:var(--warn)}.lv3{border-color:var(--danger);background:#3a1d1d}
-.row{background:var(--card);border-radius:14px;padding:12px;margin-bottom:10px;border-left:5px solid transparent}
+.row{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px;border-left:5px solid transparent}
 .row.lv0{border-left-color:var(--ok)}.row.lv1{border-left-color:var(--watch)}.row.lv2{border-left-color:var(--warn)}.row.lv3{border-left-color:var(--danger)}
 .rtop{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.rlabel{font-weight:600;font-size:15px}
+.rlabel{font-weight:700;font-size:15px}
 .rlabel small{display:block;color:var(--mut);font-weight:400;font-size:12px;margin-top:2px}
 .help{border:1px solid var(--line);background:none;color:var(--mut);border-radius:50%;width:28px;height:28px;font-weight:700;flex:none}
 .inp{display:flex;align-items:center;gap:8px;margin-top:10px}
@@ -53,9 +55,9 @@ main{padding:12px}
 textarea{width:100%;background:var(--card2);border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:10px;font:inherit;min-height:60px}
 .btns{display:flex;gap:8px;margin:14px 0}
 .btn{flex:1;border:0;border-radius:12px;padding:14px;font-size:15px;font-weight:700;background:var(--card2);color:var(--txt)}
-.btn.pri{background:var(--acc);color:#fff}
-.btn.red{background:#5a2323;color:#ffb3b3}
-nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:#141b22;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);z-index:20}
+.btn.pri{background:var(--acc);color:#1b1f15}
+.btn.red{background:#4d2018;color:#f2b0a3}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:#1d2617;border-top:2px solid var(--olive)!important;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);z-index:20}
 nav button{flex:1;border:0;background:none;color:var(--mut);padding:10px 0 12px;font-size:12px;font-weight:600}
 nav button span{display:block;font-size:20px;margin-bottom:2px}
 nav button.on{color:var(--acc)}
@@ -66,13 +68,13 @@ nav button.on{color:var(--acc)}
 .hist .h3{display:none;margin-top:8px;font-size:13px;line-height:1.55}
 .hist.open .h3{display:block}
 .empty{color:var(--mut);text-align:center;padding:40px 10px}
-.guide h3{margin:18px 0 6px;font-size:16px}
+.guide h3{margin:18px 0 6px;font-size:14px;text-transform:uppercase;letter-spacing:1.2px;color:var(--acc)}
 .guide p,.guide li{font-size:14px;line-height:1.5;color:#c9d3dc}
 .guide table{width:100%;border-collapse:collapse;font-size:13px}
 .guide td,.guide th{border-bottom:1px solid var(--line);padding:7px 4px;text-align:left;vertical-align:top}
 .guide th{color:var(--mut);font-weight:600}
 .disc{font-size:12px;color:var(--mut);margin-top:16px;line-height:1.45}
-.march{background:#2a1f12;border-left:5px solid var(--warn);border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.5;margin-bottom:10px}
+.march{background:#33291a;border-left:5px solid var(--warn);border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.5;margin-bottom:10px}
 .march small{display:block;color:var(--mut);margin-top:4px;font-size:12px}
 .sec details{background:var(--card);border-radius:12px;margin-bottom:6px}
 .sec summary{padding:12px;font-weight:600;font-size:15px;list-style:none;display:flex;justify-content:space-between}
@@ -82,14 +84,16 @@ nav button.on{color:var(--acc)}
 .sec details[open]{border-left:4px solid var(--danger)}
 .sec ul{margin:0;padding:0 14px 12px 30px;font-size:14px;line-height:1.45;color:#d5dde4}
 .sec li{margin:3px 0}
-.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:#2b3a48;color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:30}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--olive);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:30}
 .toast.show{opacity:1}
 </style>
 </head>
 <body>
 <header>
-  <h1>🐕 <input id="dogName" aria-label="Nom du chien"></h1>
-  <div class="sub" id="nowTxt"></div>
+  <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 3 L58 12 V32 C58 47 46 57 32 61 C18 57 6 47 6 32 V12 Z" fill="#3d4a26" stroke="#c49a5a" stroke-width="2.5"/><ellipse cx="32" cy="40" rx="11" ry="9" fill="#efe8d6"/><ellipse cx="19.5" cy="27" rx="4" ry="5.5" fill="#efe8d6"/><ellipse cx="27" cy="20.5" rx="4" ry="5.5" fill="#efe8d6"/><ellipse cx="37" cy="20.5" rx="4" ry="5.5" fill="#efe8d6"/><ellipse cx="44.5" cy="27" rx="4" ry="5.5" fill="#efe8d6"/><path d="M29.5 34h5v4h4v5h-4v4h-5v-4h-4v-5h4z" fill="#d64535"/></svg>
+  <div><div class="tag">TECC K9 · Suivi santé</div>
+  <h1><input id="dogName" aria-label="Nom du chien"></h1>
+  <div class="sub" id="nowTxt"></div></div>
 </header>
 
 <main>
@@ -246,7 +250,7 @@ nav button.on{color:var(--acc)}
 </main>
 
 <nav>
-  <button data-p="saisie" class="on"><span>🩺</span>Saisie</button>
+  <button data-p="saisie" class="on"><span>🐾</span>Constantes</button>
   <button data-p="hist"><span>📋</span>Historique</button>
   <button data-p="sec"><span>🚑</span>Secours</button>
   <button data-p="guide"><span>📖</span>Guide</button>
@@ -436,7 +440,7 @@ function loadDraft(){const d=store.get("k9_draft",null);if(!d)return;ctx=d.ctx||
 document.getElementById("note").addEventListener("input",saveDraft);
 
 // ---------- nom du chien ----------
-const dn=document.getElementById("dogName");dn.value=store.get("k9_name","Tchoukel");
+const dn=document.getElementById("dogName");let _n=store.get("k9_name","VINCI");if(_n==="Tchoukel"){_n="VINCI";store.set("k9_name",_n)}dn.value=_n;
 dn.addEventListener("input",()=>store.set("k9_name",dn.value));
 
 // ---------- texte bilan ----------

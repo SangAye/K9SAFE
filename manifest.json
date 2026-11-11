@@ -1,13 +1,13 @@
 {
-  "name": "Constantes K9",
-  "short_name": "Constantes K9",
+  "name": "TECC K9 – Constantes",
+  "short_name": "TECC K9",
   "description": "Relevé et analyse des constantes du chien de travail",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#0f1419",
-  "theme_color": "#0f1419",
+  "background_color": "#1d2617",
+  "theme_color": "#1d2617",
   "lang": "fr",
   "icons": [
     { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
